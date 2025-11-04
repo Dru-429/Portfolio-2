@@ -30,7 +30,7 @@ export default function FolioCard({
             // variants={cardVariants}
             // initial="hidden"
             // animate={isInView ? "visible" : "hidden"}
-            className="group relative overflow-hidden backdrop-blur-xl  bg-secondary/10 hover:bg-secondary/15 border border-secondary/20 hover:border-secondary/30 rounded-3xl md:rounded-b-none shadow-xl hover:shadow-2xl flex flex-col-reverse justify-between items-center gap-10 md:flex-row p-8 mb-8 transition-all duration-500"
+            className="group relative overflow-hidden backdrop-blur-xl  bg-secondary/10 hover:bg-secondary/15 border border-secondary/20 hover:border-secondary/30 rounded-3xl md:rounded-b-none shadow-xl hover:shadow-2xl flex flex-col-reverse justify-between items-center gap-10 md:flex-row p-8 transition-all duration-500"
             whileHover={{
               scale: 1.02,
               y: 10,
@@ -173,7 +173,7 @@ export default function FolioCard({
 
                 {/* Image Overlay Effect */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
+                  className="absolute inset-0 bg-gradient-to-t from-primary/15 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
                   initial={{ scale: 1.1 }}
                   whileHover={{ scale: 1 }}
                   transition={{ duration: 0.5 }}

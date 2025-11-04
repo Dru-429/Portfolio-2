@@ -43,7 +43,7 @@ const AnimateTitle3 = ({ sno, title, child }) => {
 
   return (
     <div
-      className="flex relative w-full md:w-[90%]"
+      className="flex relative w-full"
       onMouseEnter={handelEnter}
       onMouseLeave={handelExit}
     >
@@ -198,10 +198,10 @@ const AnimateTitle3 = ({ sno, title, child }) => {
 
       <div>
         <motion.div
-          className="w-full absolute h-[5px] bg-secondary bottom-4 left-0 scale-100"
+          className="w-full absolute h-[4px] bg-secondary -bottom-4 left-0 scale-[1.02]"
           initial={{ width: "0%" }}
           animate={controlLine}
-          transition={{ duration: 0.7, ease: easeOut }}
+          transition={{ duration: 0.5, ease: easeOut }}
         ></motion.div>
         {child}
       </div>

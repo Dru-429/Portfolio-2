@@ -14,12 +14,12 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative md:w-full px-4 md:mx-10 my-20 border-t-[2px] border-foreground/30 "
+      className="relative md:w-full border-foreground/30 my-20 md:my-56 border-b-2 pb-12 "
       ref={ref}
     >
       {/* Title Section */}
       <motion.div
-        className="my-20 relative"
+        className="mb-20 relative"
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -29,7 +29,7 @@ const Projects = () => {
 
       {/* Projects Grid */}
       <motion.div
-        className="flex flex-col items-center justify-center w-full gap-10"
+        className="flex flex-col w-full gap-12"
       >
         {projectsData.map((work, index) => (
           <FolioCard

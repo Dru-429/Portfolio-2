@@ -6,6 +6,7 @@ import { SiGithub } from "react-icons/si";
 import Image from "next/image.js";
 import FlipHeader from "../ui/FlipHeader.jsx";
 import FlipHeader2 from "../ui/FlipHeader2.jsx";
+import { TiSocialLinkedinCircular } from "react-icons/ti";
 
 const HeroSection = () => {
   return (
@@ -28,15 +29,20 @@ const HeroSection = () => {
         </div>
 
         {/* //Hero Footer */}
-        <div className="px-2 md:px-10 border-t-[1px] mt-20 border-foreground flex justify-between items-center relative">
+        <div className="w-full px-2 border-t-[1px] -mt-24 border-foreground flex justify-between items-center relative">
           <div className=" py-5 text-md text-foreground/80">
             <h3>Email:</h3>
             <p>contact.dhruvsahoo@gmail.com</p>
           </div>
 
-          <Link href="https://github.com/Dru-429" className="relative ">
-            <SiGithub className="text-4xl text-foreground/80 hover:text-accent" />
-          </Link>
+          <div className="flex justify-center items-center gap-5">
+            <Link href="https://github.com/Dru-429" className="relative ">
+              <SiGithub className="text-3xl text-foreground/80 hover:text-accent" />
+            </Link>
+            <Link href="https://www.linkedin.com/in/dhruvsahoo/" className="relative ">
+              <TiSocialLinkedinCircular className="text-4xl text-foreground/80 hover:text-accent" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
