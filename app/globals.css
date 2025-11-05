@@ -6,6 +6,7 @@
 .poppins {
   font-family: "Poppins", sans-serif;
 }
+
 .gajraj-one-regular {
   font-family: "Gajraj One", sans-serif;
   font-weight: 400;
@@ -18,7 +19,8 @@
   margin-right: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
-  max-width: 100% !important; /* Ensure it takes full width */
+  max-width: 100% !important;
+  /* Ensure it takes full width */
 }
 
 
@@ -35,16 +37,16 @@
     --popover: 218 43% 97%;
     --popover-foreground: 214 70% 6%;
     
-    --primary: 189 90% 75%;            /* #acecf6 */
+    --primary: 207 56% 32%;           /* #225071 */
     --primary-foreground: 214 70% 6%;
     
-    --secondary: 205 100% 7%;          /* #001524 */
+    --secondary: 198 60% 35%;          /* #094953 */
     --secondary-foreground: 218 43% 97%;
     
     --muted: 218 43% 91%;
     --muted-foreground: 214 70% 20%;
     
-    --accent: 32 75% 25%;              /* #402007 */
+    --accent: 32 76% 59%;              /* #d49e76 */
     --accent-foreground: 218 43% 97%;
     
     --destructive: 0 84.2% 60.2%;
@@ -54,46 +56,50 @@
     --input: 218 43% 91%;
     --ring: 214 70% 6%;
     
-    --chart-1: 189 90% 75%;
-    --chart-2: 205 100% 7%;
-    --chart-3: 32 75% 25%;
+    --chart-1: 201 100% 86%;
+    --chart-2: 198 60% 35%;
+    --chart-3: 32 89% 15%;
     --chart-4: 218 43% 97%;
     --chart-5: 214 70% 6%;
-
 
     --radius: 0.5rem;
   }
 
 
   .dark {
-    --background: 214 70% 6%;          /* #05090f */
-    --foreground: 218 43% 95%;         /* #dfe9f6 */
-    
+    --background: 214 70% 6%;
+    /* #05090f */
+    --foreground: 218 43% 95%;
+    /* #dfe9f6 */
+
     --card: 214 70% 6%;
     --card-foreground: 218 43% 95%;
-    
+
     --popover: 214 70% 6%;
     --popover-foreground: 218 43% 95%;
-    
-    --primary: 198 60% 35%;            /* #094953 */
+
+    --primary: 198 60% 35%;
+    /* #094953 */
     --primary-foreground: 218 43% 95%;
-    
-    --secondary: 201 100% 86%;         /* #dbf0ff */
+
+    --secondary: 201 100% 86%;
+    /* #dbf0ff */
     --secondary-foreground: 214 70% 6%;
-    
+
     --muted: 214 70% 14%;
     --muted-foreground: 218 43% 85%;
-    
-    --accent: 32 89% 87%;              /* #f8d7bf */
+
+    --accent: 32 89% 87%;
+    /* #f8d7bf */
     --accent-foreground: 214 70% 6%;
-    
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 218 43% 95%;
-    
+
     --border: 214 70% 14%;
     --input: 214 70% 14%;
     --ring: 218 43% 95%;
-    
+
     --chart-1: 198 60% 35%;
     --chart-2: 201 100% 86%;
     --chart-3: 32 89% 87%;
@@ -102,13 +108,11 @@
   }
 }
 
-
-
-
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
