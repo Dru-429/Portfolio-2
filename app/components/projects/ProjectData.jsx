@@ -5,25 +5,44 @@ import {
   SiAppwrite,
   SiNextdotjs,
   SiMongodb,
+  SiGreensock,
+  SiRender,
 } from "react-icons/si";
 import { FaJs } from "react-icons/fa6";
 import { RiFirebaseFill } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
+import { TbBrandFramerMotion } from "react-icons/tb";
 
 const projectData = [
   {
-    title: "Sticky Board",
-    liveLink: "https://stickyboard-dru.vercel.app/",
-    gitLink: "https://github.com/Dru-429/sticky-board",
+    title: "K72 - Creative Portfolio",
+    liveLink: "https://k72-mets.onrender.com/",
+    gitLink: "https://github.com/Dru-429/k72",
     about:
-      "Sticky Board is a modern twist on the classic community notice wall. Drop anonymous notes, share ideas, shout out projects, or just vibe — no logins, no limits. A playful digital corkboard for pure creativity.",
+      "A modern creative agency portfolio showcasing premium web experiences with smooth scroll animations and interactive UI and responsive grid layout for optimal project presentation.",
     stack: [
-      ["Next.js", <SiNextdotjs />],
+      ["React", <IoLogoReact />],
       ["Tailwind CSS", <SiTailwindcss />],
-      ["Appwrite", <SiAppwrite />],
-      ["Framer Motion", <SiFramer />],
+      ["GSAP", <SiGreensock />],
+      ["Lenis Scroll", <TbBrandFramerMotion />],
+      ["Render", <SiRender />],
     ],
-    img: "/stickyboard.svg", // Replace with your actual Sticky Board image path
+    img: "/k72.png", // Replace with actual image path
+  },
+    {
+    title: "Sundown Studio ",
+    liveLink: "https://dru-sundown-studio-clone.web.app/",
+    gitLink: "https://github.com/Dru-429/sundown-studio-clone", // update if repo exists
+    about:
+      "A sleek, modern clone of Sundown Studio’s site with smooth scrolling, responsive design, 2D animations, loading screen, swiping elements, and interactive buttons.",
+    stack: [
+      ["HTML", <IoLogoHtml5 />],
+      ["CSS", <IoLogoCss3 />],
+      ["JavaScript", <FaJs />],
+      ["Locomotive Scroll", <SiFramer />],
+      ["Firebase", <RiFirebaseFill />],
+    ],
+    img: "/sundown.svg", // Replace with actual image
   },
   {
     title: "Ochi Design",
@@ -41,20 +60,19 @@ const projectData = [
     img: "/ochi-design.svg", // Replace with actual image
   },
   {
-    title: "Sundown Studio ",
-    liveLink: "https://dru-sundown-studio-clone.web.app/",
-    gitLink: "https://github.com/Dru-429/sundown-studio-clone", // update if repo exists
+    title: "Sticky Board",
+    liveLink: "https://stickyboard-dru.vercel.app/",
+    gitLink: "https://github.com/Dru-429/sticky-board",
     about:
-      "A sleek, modern clone of Sundown Studio’s site with smooth scrolling, responsive design, 2D animations, loading screen, swiping elements, and interactive buttons.",
+      "Sticky Board is a modern twist on the classic community notice wall. Drop anonymous notes, share ideas, shout out projects, or just vibe — no logins, no limits. A playful digital corkboard for pure creativity.",
     stack: [
-      ["HTML", <IoLogoHtml5 />],
-      ["CSS", <IoLogoCss3 />],
-      ["JavaScript", <FaJs />],
-      ["Locomotive Scroll", <SiFramer />], 
-      ["Firebase", <RiFirebaseFill />],
+      ["Next.js", <SiNextdotjs />],
+      ["Tailwind CSS", <SiTailwindcss />],
+      ["Appwrite", <SiAppwrite />],
+      ["Framer Motion", <SiFramer />],
     ],
-    img: "/sundown.svg", // Replace with actual image
+    img: "/stickyboard.svg", // Replace with your actual Sticky Board image path
   },
 ];
 
-export default projectData
+export default projectData;
