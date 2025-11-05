@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 import { IoLogoHtml5, IoLogoCss3, IoLogoReact } from "react-icons/io5";
 import {
@@ -23,8 +23,7 @@ import { FaNodeJs } from "react-icons/fa";
 import { BiLogoTypescript } from "react-icons/bi";
 
 const TechStack = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, });
+  const [isHovered, setIsHovered] = useState(false);
 
   const techStackData = [
     {
@@ -109,102 +108,103 @@ const TechStack = () => {
     },
   ];
 
-  // const itemVariants = {
-  //   hidden: {
-  //     opacity: 0,
-  //     y: 30,
-  //     filter: "blur(10px)",
-  //   },
-  //   visible: {
-  //     opacity: 1,
-  //     y: 0,
-  //     filter: "blur(0px)",
-  //     transition: {
-  //       delay: 0.5,
-  //       duration: 1,
-  //       ease: [0.25, 0.46, 0.45, 0.94],
-  //     },
-  //   },
-  // };
+  // Split tech stack into 3 rows
+  const itemsPerRow = Math.ceil(techStackData.length / 3);
+  const row1 = techStackData.slice(0, itemsPerRow);
+  const row2 = techStackData.slice(itemsPerRow, itemsPerRow * 2);
+  const row3 = techStackData.slice(itemsPerRow * 2);
+
+  const MarqueeRow = ({ items, direction = "left", duration = 20 }) => (
+    <div className="relative w-full overflow-hidden py-3">
+      {/* Fade Overlay Left */}
+      <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-background/90 to-transparent z-10 pointer-events-none" />
+
+      {/* Fade Overlay Right */}
+      <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-background/90 to-transparent z-10 pointer-events-none" />
+
+      {/* Marquee Content */}
+      <motion.div
+        className="flex gap-4 w-fit"
+        animate={{
+          x: direction === "left" ? [-2000, 0] : [0, -2000],
+        }}
+        transition={{
+          duration: duration,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      >
+        {/* First set */}
+        {items.map((tech, index) => (
+          <motion.div
+            key={`original-${index}`}
+            className="group relative overflow-hidden backdrop-blur-md bg-secondary/20 hover:bg-secondary/30 border border-secondary/30 hover:border-secondary/40 rounded-2xl px-6 py-3 cursor-grab active:cursor-grabbing transition-all duration-300 min-w-[180px] flex-shrink-0"
+          >
+            {/* Gradient Background */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-r ${tech.color} opacity-30 group-hover:opacity-50 transition-opacity duration-300 rounded-2xl`}
+            />
+
+            <div className="relative z-10 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <motion.div className="text-xl text-foreground/80 group-hover:text-foreground">
+                  {tech.icon}
+                </motion.div>
+                <span className="text-sm font-medium text-white md:text-foreground md:group-hover:text-white">
+                  {tech.name}
+                </span>
+              </div>
+              <motion.div className="w-3 h-3 rounded-full bg-gradient-to-r from-accent to-secondary" />
+            </div>
+          </motion.div>
+        ))}
+
+        {/* Duplicate set for seamless loop */}
+        {items.map((tech, index) => (
+          <motion.div
+            key={`duplicate-${index}`}
+            className="group relative overflow-hidden backdrop-blur-md bg-secondary/20 hover:bg-secondary/30 border border-secondary/30 hover:border-secondary/40 rounded-2xl px-6 py-3 cursor-grab active:cursor-grabbing transition-all duration-300 min-w-[180px] flex-shrink-0"
+          >
+            {/* Gradient Background */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-r ${tech.color} opacity-30 group-hover:opacity-50 transition-opacity duration-300 rounded-2xl`}
+            />
+
+            <div className="relative z-10 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <motion.div className="text-xl text-foreground/80 group-hover:text-foreground">
+                  {tech.icon}
+                </motion.div>
+                <span className="text-sm font-medium text-white md:text-foreground md:group-hover:text-white">
+                  {tech.name}
+                </span>
+              </div>
+              <motion.div className="w-3 h-3 rounded-full bg-gradient-to-r from-accent to-secondary" />
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  );
 
   return (
-    <section id="techstack" ref={ref}>
-      <div className="w-full min-h-screen py-20 md:pb-10 md:px-10  px-2 flex flex-col md:flex-row justify-between items-start relative overflow-hidden">
-        
+    <section id="techstack" className="w-full py-20 md:py-0 mb-20 md:mb-56 pb-24 border-b-2 border-foreground/30">
+      <div className="w-full px-2 md:px-10 flex flex-col justify-between items-start relative overflow-hidden">
         {/* Title Section */}
-        <div className="w-full md:w-auto text-center relative mb-8 md:mb-0 md:text-start">
+        <div className="w-full md:w-auto relative mb-12 text-start md:sticky md:top-20">
           <AnimateTitle2 text="Tech Stack" delay={0.05} />
         </div>
 
-        {/* Tech Stack Grid */}
-        <div className=" w-[100%] md:w-[70%] flex justify-center items-center">
-          <motion.div className="flex gap-4 flex-wrap w-[90%] md:w-[100%] justify-center items-center md:justify-start">
-            {/* Desktop Layout */}
-            <div className=" flex gap-4 justify-center items-center flex-wrap-reverse md:flex-wrap md:items-start ">
-              <div className="w-full flex flex-wrap gap-4 justify-center backdrop-blur-md bg-secondary/15 border border-secondary/30 rounded-2xl py-10 h-[70vh] overflow-y-scroll md:h-auto md:overflow-auto md:bg-transparent md:border-none ">
-                {techStackData.map((tech, index) => (
-                  <motion.div
-                    key={index}
-                    // variants={itemVariants}
-                    // initial="hidden"
-                    // animate= {isInView ? "visible":"hidden"}
-                    className="group relative overflow-hidden backdrop-blur-md bg-secondary/20 hover:bg-secondary/30 border border-secondary/30 hover:border-secondary/40 rounded-2xl px-6 py-3 cursor-grab active:cursor-grabbing transition-all duration-300 min-w-[180px] md:mb-2"
-                    drag
-                    dragConstraints={{ top: 2, bottom: 2, left: 2, right: 2 }}
-                    dragElastic={0.1}
-                    dragTransition={{
-                      bounceStiffness: 400,
-                      bounceDamping: 10,
-                    }}
-                    whileHover={{
-                      scale: 1.05,
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    whileDrag={{ scale: 1.1, zIndex: 10 }}
-                  >
-                    {/* Gradient Background */}
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r ${tech.color} opacity-60 md:opacity-0 group-hover:opacity-40 transition-opacity duration-500 rounded-2xl`}
-                    />
+        {/* Tech Stack Marquee Container */}
+        <div className="w-full md:mt-20">
+          {/* Row 1 - Scroll Left */}
+          <MarqueeRow items={row1} direction="left" duration={30} />
 
-                    <div className="relative z-10 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <motion.div className="text-xl text-foreground/80 group-hover:text-foreground">
-                          {tech.icon}
-                        </motion.div>
-                        <span className="text-sm font-medium text-white md:text-foreground md:group-hover:text-white">
-                          {tech.name}
-                        </span>
-                      </div>
-                      <motion.div className="w-3 h-3 rounded-full bg-gradient-to-r from-accent to-secondary" />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+          {/* Row 2 - Scroll Right */}
+          <MarqueeRow items={row2} direction="right" duration={35} />
 
-              <motion.div
-                className="mt-4 md:-mt-4 backdrop-blur-md bg-secondary/20 border border-secondary/30 rounded-2xl p-4 w-full"
-                initial={{ opacity: 0, y: 30 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
-                }
-                transition={{ delay: 1.5, duration: 0.8 }}
-              >
-                <div className="text-center">
-                  <motion.div className="text-2xl font-bold text-accent mb-1">
-                    {techStackData.length + 5 + " "} +
-                  </motion.div>
-                  <div className="text-sm text-foreground/70">
-                    Tech I Use to Build Magic-
-                    <span className="text-sm font-semibold text-secondary">
-                      Next Yours
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-          </motion.div>
+          {/* Row 3 - Scroll Left */}
+          <MarqueeRow items={row3} direction="left" duration={32} />
         </div>
       </div>
     </section>

@@ -80,7 +80,7 @@ const RightBlock = () => (
       className="col-span-6 md:col-span-3 bg-accent text-accent-foreground font-semibold hover:bg-foreground hover:text-accent-foreground hover:font-bold transition-all duration-100"
     >
       <div className="text-2xl z-10 opacity-90 flex flex-col md:flex-row gap-1 justify-center items-center text-background">
-        <BiSolidFoodMenu className="hidden md:visible"/>
+        <BiSolidFoodMenu />
         <div>Digital</div>
         <div>Desgin</div>
       </div>
@@ -91,12 +91,12 @@ const RightBlock = () => (
         scale: 1.1,
       }}
       transition={{ duration: 0.1, ease: easeIn }}
-      className="text-primary-foreground bg-primary/80 col-span-6 md:col-span-3 font-semibold hover:bg-primary hover:font-bold transition-all duration-100 bg-contain bg-no-repeat  bg-right-bottom hover:bg-[url('https://gashwatechnologies.com/images/dynamic_web_designing_himachal_shimla.gif')]"
+      className="text-primary-foreground bg-primary/80 col-span-6 md:col-span-3 font-semibold hover:bg-primary hover:font-bold transition-all duration-100 "
     >
       <div
         className="text-2xl z-10 opacity-90 flex flex-col md:flex-row gap-1 justify-center items-center"
       >
-        <CgWebsite className="hidden md:visible"/> {" "}
+        <CgWebsite /> {"   "}
         Web Dev
       </div>
     </Block>

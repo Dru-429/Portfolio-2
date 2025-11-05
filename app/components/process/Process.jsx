@@ -39,13 +39,6 @@ const Process = () => {
     },
   ]
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-    },
-  }
-
   const stepVariants = {
     hidden: { opacity: 0, x: 40, filter: "blur(8px)" },
     visible: {
@@ -56,7 +49,7 @@ const Process = () => {
   }
 
   return (
-    <section ref={ref} className="w-full pb-40 relative overflow-hidden">
+    <section ref={ref} className="w-full relative overflow-hidden pb-24 mb-20 md:mb-56 border-b-2 border-foreground/30">
       {/* Background Glow Elements */}
       <motion.div
         className="absolute inset-0 -z-10"
@@ -106,16 +99,16 @@ const Process = () => {
                 <motion.div
                   key={i}
                   variants={stepVariants}
-                  className="group relative overflow-hidden backdrop-blur-md bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 rounded-2xl p-6 transition-all duration-500"
+                  className="group relative overflow-hidden backdrop-blur-md bg-white/10 hover:bg-white/5 border border-white/10 hover:border-white/20 rounded-2xl p-6 transition-all duration-300"
                   whileHover={{ scale: 1.02, y: -5 }}
                 >
-                  <motion.div
+                  {/* <motion.div
                     className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}
-                  />
+                  /> */}
 
                   <div className="relative z-10 space-y-3">
                     <div className="flex items-center justify-between">
-                      <motion.div className="text-4xl font-bold text-secondary group-hover:text-primary transition-colors">
+                      <motion.div className="text-4xl font-bold text-secondary group-hover:text-accent transition-colors">
                         {step.number}
                       </motion.div>
                       <motion.div className="text-2xl text-foreground/60 group-hover:text-foreground transition-colors">
@@ -123,7 +116,7 @@ const Process = () => {
                       </motion.div>
                     </div>
                     <h3 className="text-lg font-bold text-foreground">{step.title}</h3>
-                    <p className="text-sm text-foreground/70">{step.description}</p>
+                    <p className="text-sm text-foreground/90">{step.description}</p>
                   </div>
                 </motion.div>
               ))}

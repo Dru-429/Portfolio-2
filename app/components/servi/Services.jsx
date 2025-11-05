@@ -4,7 +4,7 @@ import AnimateTitle2 from "../ui/AnimateTitle2";
 
 const Services = () => {
   return (
-    <div className="w-full md:pb-32 pb-40  border-foreground/30 ">
+    <div className="w-full pb-24 border-foreground/30 ">
       <div className="py-20 px-2 md:px-10 flex flex-col justify-between">
         <div className="w-full relative pb-8 md:pb-0">
           <AnimateTitle2 
