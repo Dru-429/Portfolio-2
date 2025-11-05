@@ -74,13 +74,13 @@ const Process = () => {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", repeatDelay: 6 }}
           />
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="relative z-10 flex flex-col justify-center items-center gap-16">
             {/* Left Side - Title and Description */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="space-y-6"
+              className="space-y-6 flex flex-col items-center"
             >
               <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
                 Bringing Your Vision to Life

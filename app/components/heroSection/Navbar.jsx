@@ -40,7 +40,7 @@ const Navbar = () => {
       onClick={handleNavClick}
     >
       <motion.div
-        className="relative text-lg text-foreground/80 hover:text-foreground cursor-pointer tracking-tight py-2 md:py-0"
+        className="relative text-lg text-foreground/80 hover:font-semibold font-semibold hover:text-foreground cursor-pointer tracking-tight py-2 md:py-0"
         whileHover={{ y: -2 }}
         transition={{ duration: 0.2 }}
       >
