@@ -11,9 +11,10 @@ import Services from "./components/servi/Services.jsx";
 import ParallaxScroll from "./components/parallaxScroll/ParallaxScroll.jsx";
 import Contact from "./components/contact/Contact.jsx";
 import Projects from "./components/projects/Projects.jsx";
-import Navbar from "./components/heroSection/Navbar.jsx";
 import Process from "./components/process/Process.jsx";
 import Lenis from "lenis";
+import Navbar from "./components/common/Navbar.jsx";
+import ScrollProgress from "./components/common/ScrollProgress.jsx";
 
 const page = () => {
 
@@ -57,6 +58,7 @@ const page = () => {
       <footer className="max-w-[95%] xl:max-w-[1223px] w-full mx-auto overflow-x-hidden flex flex-col justify-center">
         <Contact />
       </footer>
+      <ScrollProgress />
     </main>
   );
 };

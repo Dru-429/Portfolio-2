@@ -6,8 +6,8 @@ const CircularBackground = ({ className = "" }) => {
   return (
     <div className={`relative ${className}`}>
       <motion.svg
-        width="400"
-        height="400"
+        width="650"
+        height="650"
         viewBox="0 0 400 400"
         className="w-full h-full"
         initial={{ opacity: 0, scale: 0.8 }}

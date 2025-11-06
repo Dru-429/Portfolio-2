@@ -31,7 +31,7 @@ const Location = () => {
           height="500"
           width="500"
         />
-        <p className="pt-4">{currentTime} IST</p>
+        <p className="pt-4 text-foreground">{currentTime} IST</p>
       </div>
 
       <div className="flex flex-col items-center justify-center text-foreground/80" >

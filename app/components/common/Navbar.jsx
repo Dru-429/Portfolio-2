@@ -3,7 +3,7 @@
 import { easeIn, motion } from "framer-motion";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { ModeToggle } from "./ModeToggle";
+import { ModeToggle } from "../common/ModeToggle";
 import Image from "next/image";
 import clsx from "clsx";
 import { Menu, X } from "lucide-react";
@@ -66,7 +66,7 @@ const Navbar = () => {
           className={clsx(
             "mx-auto transition-all duration-400 flex items-center justify-center",
             isScrolled
-              ? "w-fit px-8 py-3 rounded-full backdrop-blur-lg bg-secondary/20 border border-accent/10 shadow-lg shadow-accent/10"
+              ? "w-fit px-8 py-3 rounded-full backdrop-blur-lg bg-secondary/20 border border-accent/10 shadow-lg dark:shadow-accent/10 shadow-secondary/40"
               : "w-full px-4"
           )}
         >
