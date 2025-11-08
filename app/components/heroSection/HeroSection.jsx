@@ -44,6 +44,15 @@ const HeroSection = () => {
             width={300}
             className="lg:h-[70vh] w-auto relative -top-2 lg:-top-16"
           />
+
+          
+          <p className="md:hidden py-10 visible text-foreground/80 w-full md:w-[20%] text-md md:text-sm selection:bg-secondary/80 selection:text-black text-left md:absolute -right-2 -top-36">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I'm a frontend developer
+            obsessed with creating smooth, modern web experiences and automating
+            the boring stuff. I design custom websites, build Notion templates,
+            and develop web automation tools that save you time and scale your
+            business.
+          </p>
         </div>
 
         {/* //Hero Footer */}
@@ -53,7 +62,7 @@ const HeroSection = () => {
             DELHI_{currentTime}
           </p>
 
-          <p className="text-foreground/80 w-full md:w-[20%] text-lg md:text-sm selection:bg-secondary/80 selection:text-black text-left md:absolute -right-2 -top-36">
+          <p className="hidden md:visible text-foreground/80 w-full md:w-[20%] text-md md:text-sm selection:bg-secondary/80 selection:text-black text-left md:absolute -right-2 -top-36">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I'm a frontend developer
             obsessed with creating smooth, modern web experiences and automating
             the boring stuff. I design custom websites, build Notion templates,
