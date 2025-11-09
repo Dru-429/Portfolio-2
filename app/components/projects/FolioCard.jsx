@@ -30,7 +30,7 @@ export default function FolioCard({
             // variants={cardVariants}
             // initial="hidden"
             // animate={isInView ? "visible" : "hidden"}
-            className="group relative overflow-hidden backdrop-blur-xl  bg-secondary/10 hover:bg-secondary/15 border border-secondary/20 hover:border-secondary/30 rounded-3xl md:rounded-b-none shadow-xl hover:shadow-2xl flex flex-col-reverse justify-between items-center gap-10 md:flex-row p-8 transition-all duration-500"
+            className="group relative overflow-hidden backdrop-blur-xl  bg-secondary/10 hover:bg-secondary/15 border border-secondary/20 hover:border-secondary/30 rounded-3xl lg:rounded-b-none shadow-xl hover:shadow-2xl flex flex-col-reverse justify-between items-center gap-10 lg:flex-row p-8 transition-all duration-500"
             whileHover={{
               scale: 1.02,
               y: 10,
@@ -38,11 +38,11 @@ export default function FolioCard({
             transition={{ duration: 0.3 }}
           >
             {/* Content Section */}
-            <motion.div className="flex-1 relative z-10 md:w-[60%] lg:w-[70%] xl:w-[75%] ">
+            <motion.div className="flex-1 relative z-10 lg:w-[60%] lg:w-[70%] xl:w-[75%] ">
               {/* title & Links Section */}
-              <div className="flex justify-between items-center mb-4 md:justify-end md:items-end">
+              <div className="flex justify-between items-center mb-4 lg:justify-end lg:items-end">
                 <motion.h2
-                  className="text-2xl font-bold text-secondary md:hidden "
+                  className="text-2xl font-bold text-secondary lg:hidden "
                   initial={{ opacity: 0, y: 20 }}
                   animate={
                     isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
@@ -156,7 +156,7 @@ export default function FolioCard({
             </motion.div>
 
             {/* Image Section */}
-            <div className="relative flex-shrink-0 md:w-[40%] z-40">
+            <div className="relative flex-shrink-0 lg:w-[40%] z-40">
               <div className="relative overflow-hidden rounded-2xl backdrop-blur-sm bg-secondary/5 border border-secondary/10 p-2">
                 <motion.div
                   whileHover={{ scale: 1.05 }}

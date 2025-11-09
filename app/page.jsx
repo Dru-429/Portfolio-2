@@ -34,8 +34,8 @@ const page = () => {
 
   return (
     <main className="bg-background text-foreground relative w-screen box-border overflow-x-hidden">
-      <nav className="w-full flex items-center justify-center fixed top-2 md:top-4 z-50">
-        <div className="w-[98%] md:w-full flex items-center justify-center">
+      <nav className="w-full flex items-center justify-center fixed top-2 lg:top-4 z-50">
+        <div className="w-[98%] lg:w-full flex items-center justify-center">
           <Navbar />
         </div>
       </nav>

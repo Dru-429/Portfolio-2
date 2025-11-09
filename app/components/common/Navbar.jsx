@@ -40,7 +40,7 @@ const Navbar = () => {
       onClick={handleNavClick}
     >
       <motion.div
-        className="relative text-lg text-foreground/80 hover:font-semibold font-semibold hover:text-foreground cursor-pointer tracking-tight py-2 md:py-0"
+        className="relative text-lg text-foreground/80 hover:font-semibold font-semibold hover:text-foreground cursor-pointer tracking-tight py-2 lg:py-0"
         whileHover={{ y: -2 }}
         transition={{ duration: 0.2 }}
       >
@@ -59,7 +59,7 @@ const Navbar = () => {
     <>
       {/* Desktop Navbar */}
       <motion.div
-        className="hidden md:flex fixed top-0 left-0 right-0 z-50 transition-all duration-400 py-2"
+        className="hidden lg:flex fixed top-0 left-0 right-0 z-50 transition-all duration-400 py-2"
         animate={isScrolled ? { y: 10 } : { y: 0 }}
       >
         <motion.div
@@ -108,7 +108,7 @@ const Navbar = () => {
       </motion.div>
 
       {/* Mobile Navbar */}
-      <motion.div className="md:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-4 bg-background/80 backdrop-blur-md border-b border-accent/10">
+      <motion.div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-4 bg-background/80 backdrop-blur-md border-b border-accent/10">
         {/* Mobile Logo */}
         <Link href="#home" onClick={handleNavClick}>
           <motion.div
@@ -148,7 +148,7 @@ const Navbar = () => {
             : { opacity: 0, y: -10, pointerEvents: "none" }
         }
         transition={{ duration: 0.2 }}
-        className="md:hidden fixed top-16 left-0 right-0 z-40 bg-background/80 backdrop-blur-md border-b border-accent/10 px-4 py-6"
+        className="lg:hidden fixed top-16 left-0 right-0 z-40 bg-background/80 backdrop-blur-md border-b border-accent/10 px-4 py-6"
       >
         <div className="flex flex-col gap-3">
           {navItems.map((item, index) => (

@@ -49,7 +49,7 @@ const Process = () => {
   }
 
   return (
-    <section ref={ref} className="w-full relative overflow-hidden pb-24 mb-20 md:mb-56 border-b-2 border-foreground/30">
+    <section ref={ref} className="w-full relative overflow-hidden pb-24 mb-20 lg:mb-56 border-b-2 border-foreground/30">
       {/* Background Glow Elements */}
       <motion.div
         className="absolute inset-0 -z-10"
@@ -60,9 +60,9 @@ const Process = () => {
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-secondary/5 rounded-full blur-2xl" />
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 lg:px-8">
         <motion.div
-          className="relative backdrop-blur-xl bg-secondary/10 border border-secondary/20 rounded-3xl p-8 md:p-12 shadow-2xl"
+          className="relative backdrop-blur-xl bg-secondary/10 border border-secondary/20 rounded-3xl p-8 lg:p-12 shadow-2xl"
           initial={{ opacity: 0, scale: 0.95, filter: "blur(15px)" }}
           animate={isInView ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -82,18 +82,18 @@ const Process = () => {
               transition={{ duration: 0.8 }}
               className="space-y-6 flex flex-col items-center"
             >
-              <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
+              <motion.h2 className="text-4xl lg:text-5xl lg:text-6xl font-bold text-foreground">
                 Bringing Your Vision to Life
               </motion.h2>
 
-              <motion.p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
+              <motion.p className="text-lg lg:text-xl text-foreground/80 leading-relaxed">
                 Here's how I help bring your project to life — simple, clear, effective.
               </motion.p>
             </motion.div>
 
             {/* Right Side - Process Steps */}
             <div
-              className="grid grid-cols-1 md:grid-cols-2 gap-6"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-6"
             >
               {processSteps.map((step, i) => (
                 <motion.div

@@ -19,11 +19,11 @@ const FlipHeader = () => {
   const currentText = heading[currentIndex]
 
   return (
-    <div className='md:h-[7vw] h-[10vw] relative overflow-hidden'>
+    <div className='lg:h-[7vw] h-[10vw] relative overflow-hidden'>
       <AnimatePresence mode='wait'>
         <motion.div
           key={currentIndex}
-          className='h-full text-[10vw] md:text-[7vw] uppercase font-bold tracking-tight leading-none flex flex-wrap'
+          className='h-full text-[10vw] lg:text-[7vw] uppercase font-bold tracking-tight leading-none flex flex-wrap'
         >
           {currentText.split('').map((letter, index) => (
             <motion.span

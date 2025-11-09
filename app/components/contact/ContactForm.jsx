@@ -33,7 +33,7 @@ const ContactForm = () => {
 
       <form onSubmit={handleSubmit} className='relative'>
 
-        <div className='divide-x-3 flex flex-col md:flex-row gap-7 text-sm '>
+        <div className='divide-x-3 flex flex-col lg:flex-row gap-7 text-sm '>
 
           <div className='relative'>
             <label htmlFor="name">Name:</label>
@@ -69,7 +69,7 @@ const ContactForm = () => {
         <div className='flex flex-col mt-5'>
           <label htmlFor="message" className='text-sm'>Message:</label>
           <textarea
-            className='outline-none rounded-lg px-2 py-3 ml-2 h-32 md:h-20 text-xs bg-background border-[1px] border-secondary focus:border-accent hover:border-accent text-foreground w-[97%] block'
+            className='outline-none rounded-lg px-2 py-3 ml-2 h-32 lg:h-20 text-xs bg-background border-[1px] border-secondary focus:border-accent hover:border-accent text-foreground w-[97%] block'
             id="message"
             name="message"
             placeholder='Hi Dru...'
@@ -79,7 +79,7 @@ const ContactForm = () => {
           />
         </div>
 
-        <div className='my-2 md:my-0 relative top-2 md:absolute md:top-0 md:right-7'>  
+        <div className='my-2 lg:my-0 relative top-2 lg:absolute lg:top-0 lg:right-7'>  
             <motion.button
               type="submit"
               className='border-[1px] border-background text-background bg-secondary px-4 py-1 rounded-xl flex gap-2 items-center justify-center'

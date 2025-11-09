@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dhruvsahoo.vercel.app/sitemap.xml

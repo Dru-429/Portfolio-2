@@ -150,7 +150,7 @@ const TechStack = () => {
                 <motion.div className="text-xl text-foreground/80 group-hover:text-foreground">
                   {tech.icon}
                 </motion.div>
-                <span className="text-sm font-medium text-white md:text-foreground md:group-hover:text-white">
+                <span className="text-sm font-medium text-white lg:text-foreground lg:group-hover:text-white">
                   {tech.name}
                 </span>
               </div>
@@ -175,7 +175,7 @@ const TechStack = () => {
                 <motion.div className="text-xl text-foreground/80 group-hover:text-foreground">
                   {tech.icon}
                 </motion.div>
-                <span className="text-sm font-medium text-white md:text-foreground md:group-hover:text-white">
+                <span className="text-sm font-medium text-white lg:text-foreground lg:group-hover:text-white">
                   {tech.name}
                 </span>
               </div>
@@ -188,15 +188,15 @@ const TechStack = () => {
   );
 
   return (
-    <section id="techstack" className="w-full py-20 md:py-0 mb-20 md:mb-56 pb-24 border-b-2 border-foreground/30">
-      <div className="w-full px-2 md:px-10 flex flex-col justify-between items-start relative overflow-hidden">
+    <section id="techstack" className="w-full py-20 lg:py-0 mb-20 lg:mb-56 pb-24 border-b-2 border-foreground/30">
+      <div className="w-full px-2 lg:px-10 flex flex-col justify-between items-start relative overflow-hidden">
         {/* Title Section */}
-        <div className="w-full md:w-auto relative mb-12 text-start md:sticky md:top-20">
+        <div className="w-full lg:w-auto relative mb-12 text-start lg:sticky lg:top-20">
           <AnimateTitle2 text="Tech Stack" delay={0.05} />
         </div>
 
         {/* Tech Stack Marquee Container */}
-        <div className="w-full md:mt-20">
+        <div className="w-full lg:mt-20">
           {/* Row 1 - Scroll Left */}
           <MarqueeRow items={row1} direction="left" duration={30} />
 

@@ -57,13 +57,13 @@ const Block = ({ className, ...rest }) => {
 };
 
 const HeaderBlock = () => (
-  <Block className="col-span-6 row-span-2 md:col-span-6 relative">
-    <div className="absolute md:right-4 md:top-[30%] right-[15%] bottom-[10%]">
+  <Block className="col-span-6 row-span-2 lg:col-span-6 relative">
+    <div className="absolute lg:right-4 lg:top-[30%] right-[15%] bottom-[10%]">
       <Eyes />
     </div>
-    <h1 className=" md:text-2xl text-xl font-bold leading-tight text-background">
+    <h1 className=" lg:text-2xl text-xl font-bold leading-tight text-background">
       Things I can help you with:{" "}
-      <span className="text-accent-foreground md:text-lg md:block relative hidden m md:-bottom-20">
+      <span className="text-accent-foreground lg:text-lg lg:block relative hidden m lg:-bottom-20">
         Think. Design. Built. Launch. Automate.
       </span>
     </h1>
@@ -77,9 +77,9 @@ const RightBlock = () => (
         scale: 1.1,
       }}
       transition={{ duration: 0.1, ease: easeIn }}
-      className="col-span-6 md:col-span-3 bg-accent text-accent-foreground font-semibold hover:bg-foreground hover:text-accent-foreground hover:font-bold transition-all duration-100"
+      className="col-span-6 lg:col-span-3 bg-accent text-accent-foreground font-semibold hover:bg-foreground hover:text-accent-foreground hover:font-bold transition-all duration-100"
     >
-      <div className="text-2xl z-10 opacity-90 flex flex-col md:flex-row gap-1 justify-center items-center text-background">
+      <div className="text-2xl z-10 opacity-90 flex flex-col lg:flex-row gap-1 justify-center items-center text-background">
         <BiSolidFoodMenu />
         <div>Digital</div>
         <div>Desgin</div>
@@ -91,10 +91,10 @@ const RightBlock = () => (
         scale: 1.1,
       }}
       transition={{ duration: 0.1, ease: easeIn }}
-      className="text-primary-foreground bg-primary/80 col-span-6 md:col-span-3 font-semibold hover:bg-primary hover:font-bold transition-all duration-100 "
+      className="text-primary-foreground bg-primary/80 col-span-6 lg:col-span-3 font-semibold hover:bg-primary hover:font-bold transition-all duration-100 "
     >
       <div
-        className="text-2xl z-10 opacity-90 flex flex-col md:flex-row gap-1 justify-center items-center"
+        className="text-2xl z-10 opacity-90 flex flex-col lg:flex-row gap-1 justify-center items-center"
       >
         <CgWebsite /> {"   "}
         Web Dev
@@ -107,7 +107,7 @@ const RightBlock = () => (
         scale: 1.1,
       }}
       transition={{ duration: 0.2, ease: easeIn }}
-      className="col-span-12 md:col-span-6 bg-primary/60 text-2xl text-primary-foreground opacity-90 font-semibold hover:bg-primary hover:text-primary-foreground hover:font-bold transition-all duration-200"
+      className="col-span-12 lg:col-span-6 bg-primary/60 text-2xl text-primary-foreground opacity-90 font-semibold hover:bg-primary hover:text-primary-foreground hover:font-bold transition-all duration-200"
     >
       <div className="flex justify-center items-center h-full text-2xl gap-2">
         <span className="text-2xl ">
@@ -162,7 +162,7 @@ const WebBotBlock = () => {
         duration: 0.1,
         ease: easeInOut,
       }}
-      className="col-span-12 flex flex-row md:flex-col items-center gap-4 md:col-span-3 bg-secondary text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-100 text-2xl font-semibold"
+      className="col-span-12 flex flex-row lg:flex-col items-center gap-4 lg:col-span-3 bg-secondary text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-100 text-2xl font-semibold"
     >
       <p className=" text-2xl flex items-center justify-center w-full gap-2">
         <RiRobot3Fill /> Smart Web Bots
@@ -172,7 +172,7 @@ const WebBotBlock = () => {
 };
 
 const BottomBlock = () => (
-  <Block className="md:hidden visible col-span-12 flex items-center bg-foreground text-2xl text-background font-semibold">
+  <Block className="lg:hidden visible col-span-12 flex items-center bg-foreground text-2xl text-background font-semibold">
     <p className=" text-lg text-center tracking-tighter font-semibold flex items-center justify-center w-full gap-2">
       Think. Design. Built. Launch. Automate.
     </p>
@@ -186,7 +186,7 @@ const AutomationBlock = () => (
       scale: 1.05,
     }}
     transition={{ duration: 0.2, ease: easeIn }}
-    className="col-span-12 md:col-span-9 flex items-center font-semibold bg-accent hover:bg-foreground hover:font-bold text-background "
+    className="col-span-12 lg:col-span-9 flex items-center font-semibold bg-accent hover:bg-foreground hover:font-bold text-background "
   >
     <p className="mb-3 text-2xl flex items-center justify-center w-full gap-2">
       <MdEventRepeat /> {" "} 

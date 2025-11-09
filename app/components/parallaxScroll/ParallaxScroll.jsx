@@ -72,7 +72,7 @@ const ParallaxScroll = () => {
 const Column = ({ images, y, top }) => {
   return (
     <motion.div
-      className="w-1/3 md:w-1/4 h-full flex flex-col gap-2 relative"
+      className="w-1/3 lg:w-1/4 h-full flex flex-col gap-2 relative"
       style={{ y, top }}
     >
       {images.map((src, index) => (
@@ -81,7 +81,7 @@ const Column = ({ images, y, top }) => {
             src={`/images/${src}`}
             alt={`image-${index}`}
             fill
-            className="object-fill md:object-cover"
+            className="object-fill lg:object-cover"
           />
         </div>
       ))}

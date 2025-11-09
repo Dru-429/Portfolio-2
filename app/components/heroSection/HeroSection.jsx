@@ -46,7 +46,7 @@ const HeroSection = () => {
           />
 
           
-          <p className="md:hidden py-10 visible text-foreground/80 w-full md:w-[20%] text-md md:text-sm selection:bg-secondary/80 selection:text-black text-left md:absolute -right-2 -top-36">
+          <p className="lg:hidden py-10 visible text-foreground/80 w-full lg:w-[20%] text-md lg:text-sm selection:bg-secondary/80 selection:text-black text-left lg:absolute -right-2 -top-36">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I'm a frontend developer
             obsessed with creating smooth, modern web experiences and automating
             the boring stuff. I design custom websites, build Notion templates,
@@ -56,13 +56,13 @@ const HeroSection = () => {
         </div>
 
         {/* //Hero Footer */}
-        <div className="w-full px-2 border-t-[1px] mt-10 md:-mt-16 border-foreground flex justify-between items-center relative">
+        <div className="w-full px-2 border-t-[1px] mt-10 lg:-mt-16 border-foreground flex justify-between items-center relative">
           <p className="flex gap-2\1 justify-center items-center absolute left-0 -top-10">
             <CiGlobe className="text-xl" />
             DELHI_{currentTime}
           </p>
 
-          <p className="hidden md:visible text-foreground/80 w-full md:w-[20%] text-md md:text-sm selection:bg-secondary/80 selection:text-black text-left md:absolute -right-2 -top-36">
+          <p className="hidden lg:visible text-foreground/80 w-full lg:w-[20%] text-md lg:text-sm selection:bg-secondary/80 selection:text-black text-left lg:absolute -right-2 -top-36">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I'm a frontend developer
             obsessed with creating smooth, modern web experiences and automating
             the boring stuff. I design custom websites, build Notion templates,

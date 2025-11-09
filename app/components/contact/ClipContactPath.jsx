@@ -7,7 +7,7 @@ import Location from "./Location"
 
 export const SocialLinks = () => {
   return (
-    <div className="w-full px-4 md:px-6 lg:px-8">
+    <div className="w-full px-4 lg:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <ClipPathLinks />
       </div>
@@ -48,7 +48,7 @@ const ClipPathLinks = () => {
         </div>
 
         {/* Tablet Layout */}
-        <div className="hidden md:grid lg:hidden md:grid-cols-2 divide-x divide-primary/20">
+        <div className="hidden lg:grid lg:hidden lg:grid-cols-2 divide-x divide-primary/20">
           {/* Left Column */}y
           <div className="space-y-0 divide-y divide-primar/20">
             <LinkBox Icon={IoMdMail} href="mailto:contact.dhruvsahoo@gmail.com" Text="contact.dhruvsahoo@gmail.com" />
@@ -65,7 +65,7 @@ const ClipPathLinks = () => {
         </div>
 
         {/* Mobile Layout */}
-        <div className="grid md:hidden grid-cols-1 divide-y divide-primary/20">
+        <div className="grid lg:hidden grid-cols-1 divide-y divide-primary/20">
           {/* Email */}
           <LinkBox Icon={IoMdMail} href="mailto:contact.dhruvsahoo@gmail.com" Text="contact.dhruvsahoo@gmail.com" />
 

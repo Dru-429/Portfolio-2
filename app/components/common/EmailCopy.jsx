@@ -21,7 +21,7 @@ const EmailCopy = () => {
   return (
     <div className="flex items-center gap-2 w-fit">
       {/* Email Display */}
-      <p className="text-foreground text-sm md:text-base">
+      <p className="text-foreground text-sm lg:text-base">
         {email}
       </p>
 

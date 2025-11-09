@@ -14,7 +14,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative md:w-full border-foreground/30 my-20 md:my-56 border-b-2 pb-12 "
+      className="relative lg:w-full border-foreground/30 my-20 lg:my-56 border-b-2 pb-12 "
       ref={ref}
     >
       {/* Title Section */}

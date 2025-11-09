@@ -47,7 +47,7 @@ const AnimateTitle3 = ({ sno, title, child }) => {
       onMouseEnter={handelEnter}
       onMouseLeave={handelExit}
     >
-      <div className="hidden md:flex gap-1 absolute top-10 left-10  z-20 text-secondary">
+      <div className="hidden lg:flex gap-1 absolute top-10 left-10  z-20 text-secondary">
 
         <div className="flex relative top-1">
           {Sno.split(" ").map((item, index) => {
