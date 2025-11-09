@@ -38,7 +38,7 @@ const TechCapsule = ({ item, index, delay = 0 }) => {
     >
       {/* Gradient Background */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/10 to-accent/20 opacity-0 group-hover:opacity-50 transition-opacity duration-500 rounded-full"
+        className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/10 to-accent/20 opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-full"
       />
 
       {/* Content */}

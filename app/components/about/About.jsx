@@ -22,8 +22,8 @@ const About = () => {
       filter: "blur(0px)",
       transition: {
         delay: i * 0.2,
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        duration: 0.4,
+        ease: [0.05, 0.16, 0.25, 0.34],
       },
     }),
   };

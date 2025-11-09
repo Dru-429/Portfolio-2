@@ -1,41 +1,77 @@
-My personal potfolio 
-restructuring---- SEtting them, 
-                  Adding dark mode 
-                  Seting glob --> Aceternity ui
+# Dhruv Sahoo - Portfolio
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+> Building stunning websites and smart bots that automate your workflow. Crafting seamless digital experiences — from pixel-perfect frontends to powerful web automations.
 
-## Getting Started
+## 🚀 Quick Links
 
-First, run the development server:
+- **Portfolio**: [dhruvsahoo.vercel.app](https://dhruvsahoo.vercel.app)
+- **Email**: contact.dhruvsahoo@gmail.com
+- **LinkedIn**: [linkedin.com/in/dhruvsahoo](https://www.linkedin.com/in/dhruvsahoo/)
+- **GitHub**: [github.com/dhruvsahoo](https://github.com/dhruvsahoo)
+- **X (Twitter)**: [@dhruvsahoo](https://x.com/dhruvsahoo)
+- **Instagram**: [@dhruvsahoo](https://instagram.com/dhruvsahoo)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 👨‍💻 About Me
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+I'm a **frontend web developer, Notion template designer, and web automation builder** with over a year of experience creating digital solutions that are both visually compelling and functionally powerful. I specialize in building scalable web applications, crafting engaging user experiences, and automating repetitive workflows to help businesses and individuals work smarter.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### What I Do
 
-## Learn More
+**Web Development & Design**
+- Clean, modern websites with thoughtful animations and responsive design
+- Smooth, engaging user experiences optimized for conversions
+- Full-stack web applications with focus on frontend excellence
 
-To learn more about Next.js, take a look at the following resources:
+**Workflow & Web Automation**
+- Custom web bots that handle repetitive tasks
+- Data scraping, content posting, and outreach automation
+- Browser-based workflows and integrations
+- Email automation for personalized client outreach
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Notion Template Design**
+- Custom Notion templates for personal organization
+- Full business system templates for productivity
+- Streamlined workflows tailored to your needs
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+| Category | Skills |
+|----------|--------|
+| **Frontend Development** | React, Next.js, TypeScript, JavaScript, Tailwind CSS, HTML/CSS |
+| **Animation & UX** | Framer Motion, GSAP, Locomotive Scroll, Interactive Design |
+| **Backend & Database** | Firebase, Appwrite, RESTful APIs |
+| **Web Automation** | n8n, API Integration, Data Scraping, Workflow Automation |
+| **Design Tools** | Figma, Notion, UI/UX Design, Responsive Design |
+| **DevOps & Deployment** | Vercel, Git, GitHub, Performance Optimization |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎓 Education & Learning
+
+- **Current Focus**: MERN Stack Development, Backend Development, Databases
+- **Mentorship**: Learning advanced web development from industry experts
+- **Target**: Google Summer of Code (GSoC) 2026
+- **Continuous Learning**: AI Tools, Web3, Advanced Animations, System Design
+
+---
+
+## 🔗 Get In Touch
+
+I'm always open to collaborating on exciting projects, whether you need a stunning website, custom automation, or creative solutions.
+
+- **Email**: contact.dhruvsahoo@gmail.com
+- **LinkedIn**: [linkedin.com/in/dhruvsahoo](https://www.linkedin.com/in/dhruvsahoo/)
+- **GitHub**: [github.com/dhruvsahoo](https://github.com/dhruvsahoo)
+- **Portfolio**: [dhruvsahoo.vercel.app](https://dhruvsahoo.vercel.app)
+
+---
+
+## 📝 License
+
+© 2025 Dhruv Sahoo. All rights reserved.
+
+---
+
+**Last Updated**: November 2025 | Ready to build something amazing? Let's connect!

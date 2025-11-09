@@ -112,7 +112,7 @@ export default function Cursor() {
 
         {/* Liquid ripple effect */}
         <div
-          className={`absolute inset-0 rounded-full transition-all duration-500 ${isHovering ? "animate-pulse" : ""}`}
+          className={`absolute inset-0 rounded-full transition-all duration-300 ${isHovering ? "animate-pulse" : ""}`}
           style={{
             background: `conic-gradient(from 0deg, 
               hsla(213, 75%, 75%, 0.2), 

@@ -103,7 +103,7 @@ const Process = () => {
                   whileHover={{ scale: 1.02, y: -5 }}
                 >
                   {/* <motion.div
-                    className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}
+                    className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl`}
                   /> */}
 
                   <div className="relative z-10 space-y-3">

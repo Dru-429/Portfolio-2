@@ -62,7 +62,7 @@ const HeroSection = () => {
             DELHI_{currentTime}
           </p>
 
-          <p className="hidden lg:visible text-foreground/80 w-full lg:w-[20%] text-md lg:text-sm selection:bg-secondary/80 selection:text-black text-left lg:absolute -right-2 -top-36">
+          <p className="hidden lg:block text-foreground/80 w-full lg:w-[20%] text-md lg:text-sm selection:bg-secondary/80 selection:text-black text-left lg:absolute -right-2 -top-36">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I'm a frontend developer
             obsessed with creating smooth, modern web experiences and automating
             the boring stuff. I design custom websites, build Notion templates,
