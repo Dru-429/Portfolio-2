@@ -100,18 +100,18 @@ export const metadata = {
       "Web Automation Builder | Portfolio Websites & AI Bots | Dhruv Sahoo",
     description:
       "Build stunning portfolio websites, automate workflows with AI bots, and create custom Notion templates. Expert web developer with 1+ year experience.",
-    url: "https://dhruvsahoo.vercel.app",
+    url: "https://www.dhruvsahoo.me",
     siteName: "Dhruv Sahoo - Web Developer & AI Automation",
     images: [
       {
-        url: "https://dhruvsahoo.vercel.app/og-image.png",
+        url: "https://www.dhruvsahoo.me/og-image.png",
         width: 1200,
         height: 630,
         alt: "Dhruv Sahoo - Web Automation Builder & Portfolio Developer",
         type: "image/png",
       },
       {
-        url: "https://dhruvsahoo.vercel.app/og-image-square.png",
+        url: "https://www.dhruvsahoo.me/og-image-square.png",
         width: 800,
         height: 800,
         alt: "Dhruv Sahoo - Freelance Web Developer",
@@ -131,7 +131,7 @@ export const metadata = {
       "Build stunning portfolio websites, automate workflows with AI bots, and create custom Notion templates.",
     creator: "@dev_druv",
     creatorId: "1234567890",
-    images: ["https://dhruvsahoo.vercel.app/twitter-card.png"],
+    images: ["https://www.dhruvsahoo.me/twitter-card.png"],
     site: "@dev_druv",
   },
 
@@ -148,14 +148,14 @@ export const metadata = {
 
   // === ALTERNATE LINKS ===
   alternates: {
-    canonical: "https://dhruvsahoo.vercel.app",
+    canonical: "https://www.dhruvsahoo.me",
   },
 
   // === SOCIAL PROFILES ===
   authors: [
     {
       name: "Dhruv Sahoo",
-      url: "https://dhruvsahoo.vercel.app",
+      url: "https://www.dhruvsahoo.me",
     },
   ],
 };
@@ -167,12 +167,12 @@ const structuredData = {
   name: "Dhruv Sahoo - Web Developer & AI Automation Specialist",
   description:
     "Freelance web developer specializing in portfolio websites, AI workflow automation, and web bots. Based in Delhi, India.",
-  url: "https://dhruvsahoo.vercel.app",
+  url: "https://www.dhruvsahoo.me",
   email: "contact.dhruvsahoo@gmail.com",
   founder: {
     "@type": "Person",
     name: "Dhruv Sahoo",
-    url: "https://dhruvsahoo.vercel.app",
+    url: "https://www.dhruvsahoo.me",
     sameAs: [
       "https://www.linkedin.com/in/dhruvsahoo/",
       "https://github.com/Dru-429",
@@ -249,8 +249,8 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Dhruv Sahoo",
-              url: "https://dhruvsahoo.vercel.app",
-              logo: "https://dhruvsahoo.vercel.app/logo.png",
+              url: "https://www.dhruvsahoo.me",
+              logo: "https://www.dhruvsahoo.me/logo.png",
               description:
                 "Web developer & AI automation specialist creating portfolio websites, web bots, and workflow automation solutions.",
               sameAs: [

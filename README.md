@@ -4,7 +4,7 @@
 
 ## 🚀 Quick Links
 
-- **Portfolio**: [dhruvsahoo.vercel.app](https://dhruvsahoo.vercel.app)
+- **Portfolio**: [www.dhruvsahoo.me](https://www.dhruvsahoo.me)
 - **Email**: contact.dhruvsahoo@gmail.com
 - **LinkedIn**: [linkedin.com/in/dhruvsahoo](https://www.linkedin.com/in/dhruvsahoo/)
 - **GitHub**: [github.com/dhruvsahoo](https://github.com/dhruvsahoo)
@@ -64,7 +64,7 @@ I'm always open to collaborating on exciting projects, whether you need a stunni
 - **Email**: contact.dhruvsahoo@gmail.com
 - **LinkedIn**: [linkedin.com/in/dhruvsahoo](https://www.linkedin.com/in/dhruvsahoo/)
 - **GitHub**: [github.com/dhruvsahoo](https://github.com/dhruvsahoo)
-- **Portfolio**: [dhruvsahoo.vercel.app](https://dhruvsahoo.vercel.app)
+- **Portfolio**: [www.dhruvsahoo.me](https://www.dhruvsahoo.me)
 
 ---
 
