@@ -18,9 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   // === PRIMARY METADATA ===
   title:
-    "Web Automation Builder | Portfolio Websites & Smart AI Bots | Dhruv Sahoo",
+    "Web Developer | Design Engineer & Frontend Developer | AI Agents & Bots | Dhruv Sahoo",
   description:
-    "Build stunning portfolio websites, automate workflows with AI bots, and create custom Notion templates. Expert web developer with 1+ year experience. Free consultation available.",
+    "Build stunning websites, automate workflows with AI bots, and create custom Notion templates. Expert web developer with 1+ year experience. Free consultation available.",
 
   // === ICONS ===
   icons: {
@@ -32,9 +32,13 @@ export const metadata = {
   // === KEYWORDS - OPTIMIZED FOR SEO ===
   keywords: [
     // Primary Keywords
-    "web automation builder",
+    "frontend developer",
+    "web developer",
+    "design engineer",
     "portfolio website developer",
     "AI automation specialist",
+    "AI workflow",
+    "AI bots",
     "web developer India",
     "freelance web developer Delhi",
 
