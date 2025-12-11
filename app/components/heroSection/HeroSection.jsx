@@ -38,7 +38,7 @@ const HeroSection = () => {
           <FlipHeader />
           {/* <FlipHeader2 /> */}
           <Image
-            src="/drudrudru.png"
+            src="/dru_model.png"
             alt="Dru Puppet"
             height={500}
             width={300}
