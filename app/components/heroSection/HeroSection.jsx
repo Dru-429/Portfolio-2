@@ -42,7 +42,7 @@ const HeroSection = () => {
             alt="Dru Puppet"
             height={500}
             width={300}
-            className="lg:h-[70vh] w-auto relative -top-2 lg:-top-16"
+            className="lg:h-[60vh] w-auto relative -top-2 lg:-top-16"
           />
 
           

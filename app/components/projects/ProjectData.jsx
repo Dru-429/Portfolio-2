@@ -7,6 +7,7 @@ import {
   SiMongodb,
   SiGreensock,
   SiRender,
+  SiGithubcopilot,
 } from "react-icons/si";
 import { FaJs } from "react-icons/fa6";
 import { RiFirebaseFill } from "react-icons/ri";
@@ -60,11 +61,25 @@ const projectData = [
     img: "/ochi-design.svg", // Replace with actual image
   },
   {
+    title: "Github Warpped",
+    liveLink: "https://githubwrapped-2025.vercel.app/",
+    gitLink: "https://github.com/Dru-429/github-wrapped",
+    about:
+      "GitHub Wrapped 2025 is an app that generates a year-in-review for GitHub inspired by Spotify Wrapped. It fetchs GitHub activity and presents highlights like top repositories, languages, commit streaks and a shareable image.",
+    stack: [
+      ["Next.js", <SiNextdotjs />],
+      ["Tailwind CSS", <SiTailwindcss />],
+      ["Github API", <SiGithubcopilot />],
+      ["Framer Motion", <SiFramer />],
+    ],
+    img: "/github_wrapped.png", // Replace with your actual Sticky Board image path
+  },
+  {
     title: "Sticky Board",
     liveLink: "https://stickyboard-dru.vercel.app/",
     gitLink: "https://github.com/Dru-429/sticky-board",
     about:
-      "Sticky Board is a modern twist on the classic community notice wall. Drop anonymous notes, share ideas, shout out projects, or just vibe — no logins, no limits. A playful digital corkboard for pure creativity.",
+      "Sticky Board is a modern twist on the classic community notice wall. Drop anonymous notes, share ideas, shout out project A playful digital corkboard for pure creativity.",
     stack: [
       ["Next.js", <SiNextdotjs />],
       ["Tailwind CSS", <SiTailwindcss />],
