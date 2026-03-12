@@ -45,7 +45,7 @@ const page = () => {
         <Projects />
         <Services />
         <Process />
-        <TeachStack />
+        {/* <TeachStack /> */}
         <About />
       </div>
 
