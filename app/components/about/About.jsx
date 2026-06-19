@@ -30,7 +30,7 @@ const About = () => {
 
   return (
     <section id="about" ref={ref}>
-      <div className="w-full min-h-screen px-5 lg:px-10 flex lg:flex-row flex-col justify-between lg:items-start pb-28 lg:pb-0 my-14 border-b-[2px] border-border relative border-b-foreground/50">
+      <div className="w-full max-h-screen px-5 lg:px-10 flex lg:flex-row flex-col justify-between lg:items-start mb-40 lg:pb-20 my-14 border-b-[2px] border-border relative border-b-foreground/50">
         <div className="relative mb-16 lg:mb-0">
           <AnimateTitle2 text="ABOUT" italicIndex={2} delay={0.08} />
         </div>
@@ -115,7 +115,7 @@ const About = () => {
                   rest: { x: -20, opacity: 0 },
                   hover: { x: 0, opacity: 1 },
                 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                // transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="text-lg"
               >
                 <FaArrowRight />
@@ -124,10 +124,10 @@ const About = () => {
               {/* Text */}
               <motion.span
                 variants={{
-                  rest: { x: 0 },
-                  hover: { x: 6 },
+                  rest: { scale: 1, },
+                  hover: { scale: 1.05, },
                 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                // transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="font-semibold text-base flex gap-0 justify-start items-center"
               >
                 <span className="bg-background relative -left-8 group-hover:opacity-0 w-3 h-3 rounded-full"></span>
@@ -141,7 +141,7 @@ const About = () => {
                   hover: { scaleX: 1 },
                 }}
                 transition={{ duration: 0.3 }}
-                className="absolute inset-0 origin-left bg-white/10 rounded-full scale-x-0"
+                className="absolute inset-0 origin-lef rounded-full scale-x-0"
               />
             </motion.button>
           </Link>

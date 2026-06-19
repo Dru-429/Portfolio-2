@@ -62,7 +62,7 @@ const projectData = [
   },
   {
     title: "Github Warpped",
-    liveLink: "https://githubwrapped-2025.vercel.app/",
+    liveLink: "https://githubrapped.vercel.app/",
     gitLink: "https://github.com/Dru-429/github-wrapped",
     about:
       "GitHub Wrapped 2025 is an app that generates a year-in-review for GitHub inspired by Spotify Wrapped. It fetchs GitHub activity and presents highlights like top repositories, languages, commit streaks and a shareable image.",

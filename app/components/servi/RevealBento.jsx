@@ -106,8 +106,8 @@ const RightBlock = () => (
         // rotate: "-2.5deg",
         scale: 1.1,
       }}
-      transition={{ duration: 0.2, ease: easeIn }}
-      className="col-span-12 lg:col-span-6 bg-primary/60 text-2xl text-primary-foreground opacity-90 font-semibold hover:bg-primary hover:text-primary-foreground hover:font-bold transition-all duration-200"
+      transition={{ duration: 0.1, ease: easeIn }}
+      className="col-span-12 lg:col-span-6 bg-primary/60 text-2xl text-primary-foreground opacity-90 font-semibold hover:bg-primary hover:text-primary-foreground hover:font-bold transition-all duration-100"
     >
       <div className="flex justify-center items-center h-full text-2xl gap-2">
         <span className="text-2xl ">
@@ -122,36 +122,7 @@ const RightBlock = () => (
 );
 
 const WebBotBlock = () => {
-  // const ref = useRef();
-  // const [position, setPosition] = useState({ x: 0, y: 0 })
 
-  // const handleMouseMove = (e) => {
-  //     const { clientX, clientY } = e;
-  //     const { height, width, left, top } = ref.current.getBoundingClientRect();
-  //     const x = clientX - (left - width / 2);
-  //     const y = clientY - (top + height / 2);
-  //     setPosition({ x, y });
-  // };
-
-  // const handleMouseLeave = () => {
-  //     setPosition({
-  //         x: 0, y: 0
-  //     });
-  // };
-  // if (ref.current) {
-
-  //     ref.current.addEventListener('mousemove', handleMouseMove);
-  //     ref.current.addEventListener('mouseleave', handleMouseLeave);
-
-  //     return () => {
-  //         ref.current.removeEventListener('mousemove', handleMouseMove);
-
-  //         ref.current.removeEventListener('mouseleave', handleMouseLeave);
-  //     };
-  // }
-
-  // const { x, y } = position
-  // console.log(x, y)
 
   return (
     <Block
@@ -185,7 +156,7 @@ const AutomationBlock = () => (
       // rotate: "-2.5deg",
       scale: 1.05,
     }}
-    transition={{ duration: 0.2, ease: easeIn }}
+    transition={{ duration: 0.1, ease: easeIn }}
     className="col-span-12 lg:col-span-9 flex items-center font-semibold bg-accent hover:bg-foreground hover:font-bold text-background "
   >
     <p className="mb-3 text-2xl flex items-center justify-center w-full gap-2">
