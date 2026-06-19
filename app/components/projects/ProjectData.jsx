@@ -72,7 +72,7 @@ const projectData = [
       ["Github API", <SiGithubcopilot />],
       ["Framer Motion", <SiFramer />],
     ],
-    img: "/github_wrapped.png", // Replace with your actual Sticky Board image path
+    img: "/github_Wrapped.png", // Replace with your actual Sticky Board image path
   },
   {
     title: "Sticky Board",

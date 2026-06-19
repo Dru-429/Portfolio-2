@@ -60,21 +60,21 @@ const AnimateTitle3 = ({ sno, title, child }) => {
                   <motion.div
                     initial={{ top: 0, opacity: 1 }}
                     animate={controlTop}
-                    transition={{ duration: 0.5, ease: easeIn }}
+                    transition={{ duration: 0.4, ease: easeIn }}
                   >
                     {item}
                   </motion.div>
                   <motion.div
                     initial={{ top: 0, opacity: 1 }}
                     animate={controlTop}
-                    transition={{ duration: 0.5, ease: easeIn }}
+                    transition={{ duration: 0.4, ease: easeIn }}
                   >
                     {item}
                   </motion.div>
                   <motion.div
                     initial={{ top: 0, opacity: 1 }}
                     animate={controlTop}
-                    transition={{ duration: 0.5, ease: easeIn }}
+                    transition={{ duration: 0.4, ease: easeIn }}
                   >
                     {item}
                   </motion.div>
@@ -90,21 +90,21 @@ const AnimateTitle3 = ({ sno, title, child }) => {
                     className="absolute -top-[18px]"
                     initial={{ y: "-100%", opacity: 1 }}
                     animate={controlBottom}
-                    transition={{ duration: 0.5, ease: easeIn }}
+                    transition={{ duration: 0.4, ease: easeIn }}
                   >
                     {item}
                   </motion.div>
                   <motion.div
                     initial={{ y: "-100%", opacity: 1 }}
                     animate={controlBottom}
-                    transition={{ duration: 0.5, ease: easeIn }}
+                    transition={{ duration: 0.4, ease: easeIn }}
                   >
                     {item}
                   </motion.div>
                   <motion.div
                     initial={{ y: "-100%", opacity: 1 }}
                     animate={controlBottom}
-                    transition={{ duration: 0.5, ease: easeIn }}
+                    transition={{ duration: 0.4, ease: easeIn }}
                   >
                     {item}
                   </motion.div>
@@ -126,7 +126,7 @@ const AnimateTitle3 = ({ sno, title, child }) => {
                     className="relative "
                     initial={{ top: 0, opacity: 1 }}
                     animate={controlTop}
-                    transition={{ duration: 0.5, ease: easeIn }}
+                    transition={{ duration: 0.4, ease: easeIn }}
                   >
                     {item}
                   </motion.div>
@@ -134,7 +134,7 @@ const AnimateTitle3 = ({ sno, title, child }) => {
                     className="relative "
                     initial={{ top: 0, opacity: 1 }}
                     animate={controlTop}
-                    transition={{ duration: 0.5, ease: easeIn }}
+                    transition={{ duration: 0.4, ease: easeIn }}
                   >
                     {item}
                   </motion.div>
@@ -142,7 +142,7 @@ const AnimateTitle3 = ({ sno, title, child }) => {
                     className="relative "
                     initial={{ top: 0, opacity: 1 }}
                     animate={controlTop}
-                    transition={{ duration: 0.5, ease: easeIn }}
+                    transition={{ duration: 0.4, ease: easeIn }}
                   >
                     {item}
                   </motion.div>
@@ -158,7 +158,7 @@ const AnimateTitle3 = ({ sno, title, child }) => {
                     className="absolute -top-[33px]"
                     initial={{ opacity: 1 }}
                     animate={controlBottom}
-                    transition={{ duration: 0.5, ease: easeIn }}
+                    transition={{ duration: 0.4, ease: easeIn }}
                   >
                     {item}
                   </motion.div>
@@ -166,7 +166,7 @@ const AnimateTitle3 = ({ sno, title, child }) => {
                     className="relative "
                     initial={{ y: "-100%", opacity: 1 }}
                     animate={controlBottom}
-                    transition={{ duration: 0.5, ease: easeIn }}
+                    transition={{ duration: 0.4, ease: easeIn }}
                   >
                     {item}
                   </motion.div>
@@ -174,7 +174,7 @@ const AnimateTitle3 = ({ sno, title, child }) => {
                     className="relative "
                     initial={{ y: "-100%", opacity: 1 }}
                     animate={controlBottom}
-                    transition={{ duration: 0.5, ease: easeIn }}
+                    transition={{ duration: 0.4, ease: easeIn }}
                   >
                     {item}
                   </motion.div>
@@ -192,16 +192,16 @@ const AnimateTitle3 = ({ sno, title, child }) => {
           className="w-5 h-[2px] bg-zinc-800 rounded-xl absolute rotate-90 flex"
           // initial={{ left: "50%", translateX: "-50%", scale: 1 }}
           animate={controlClicked}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
         ></motion.div>
       </div> */}
 
       <div>
         <motion.div
-          className="w-full absolute h-[4px] bg-secondary -bottom-4 left-0 scale-[1.02]"
+          className="w-full absolute h-[4px] bg-secondary -bottom-2 left-0 scale-[1.01]"
           initial={{ width: "0%" }}
           animate={controlLine}
-          transition={{ duration: 0.5, ease: easeOut }}
+          transition={{ duration: 0.3, ease: easeOut }}
         ></motion.div>
         {child}
       </div>
