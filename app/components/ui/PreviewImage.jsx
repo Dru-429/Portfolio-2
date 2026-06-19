@@ -52,7 +52,6 @@ const PreviewImage = ({ img, title, liveLink }) => {
         />
       </motion.div>
 
-      {/* AnimatePresence handles the clean mounting/unmounting animation */}
       <AnimatePresence>
         {isHovered && (
           <motion.div
@@ -60,9 +59,9 @@ const PreviewImage = ({ img, title, liveLink }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="absolute inset-0 bg-black/20 pointer-events-none rounded-2xl"
+            className="absolute inset-0 bg-accent/10 pointer-events-none rounded-2xl"
           >
-            {/* Animated Custom Hover Button */}
+            {/* Hover Button */}
             <motion.div
               style={{
                 x: cursorX,
@@ -72,7 +71,7 @@ const PreviewImage = ({ img, title, liveLink }) => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0, opacity: 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="absolute top-0 left-0 w-[120px] h-[120px] rounded-full bg-black/70 backdrop-blur-md border border-white/20 flex items-center justify-center text-white text-sm font-medium shadow-2xl pointer-events-auto"
+              className="absolute top-0 left-0 w-[100px] h-[100px] rounded-full bg-black/70 backdrop-blur-md border border-white/20 flex items-center justify-center text-white text-sm font-medium shadow-2xl pointer-events-auto"
             >
               <Link 
                 href={liveLink || "#"} 
