@@ -1,61 +1,119 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Loader({ children }) {
+  const containerRef = useRef(null);
+  const stickyMaskRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+  // Animation configuration based on Olivier Larose's math
+  const initialMaskSize = 0.5; // Starting scale of your text mask
+  const targetMaskSize = 45; // How massive it zooms (4500%) to fully reveal background
+  const easing = 0.15;
 
-    return () => clearTimeout(timer);
-  }, []);
+  let easedScrollProgress = 0;
+  let animationFrameId = null;
+
+  useEffect(() => {
+    // If the loader is active, bind the requestAnimationFrame scroll tracking loop
+    if (isLoading) {
+      animationFrameId = requestAnimationFrame(animate);
+    }
+    return () => {
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+    };
+  }, [isLoading]);
+
+  const getScrollProgress = () => {
+    if (!stickyMaskRef.current || !containerRef.current) return 0;
+
+    // Calculates how far the sticky element has traveled within its high-scroll container
+    const totalScrollableHeight =
+      containerRef.current.getBoundingClientRect().height - window.innerHeight;
+
+    // Fallback logic to finish loading if container height is miscalculated initially
+    if (totalScrollableHeight <= 0) return 0;
+
+    const scrollProgress =
+      stickyMaskRef.current.offsetTop / totalScrollableHeight;
+
+    // Linear Interpolation (Lerp) for smooth easing
+    const delta = scrollProgress - easedScrollProgress;
+    easedScrollProgress += delta * easing;
+
+    return easedScrollProgress;
+  };
+
+  const animate = () => {
+    if (!stickyMaskRef.current) return;
+
+    const progress = getScrollProgress();
+    const currentMaskSize = (initialMaskSize + targetMaskSize * progress) * 100;
+
+    // Apply the scaling dynamically to the CSS mask rules
+    stickyMaskRef.current.style.webkitMaskSize = `${currentMaskSize}%`;
+    stickyMaskRef.current.style.maskSize = `${currentMaskSize}%`;
+
+    // Once the user scrolls past 98% of the sequence, trigger the site reveal
+    if (progress >= 0.98) {
+      setIsLoading(false);
+      window.scrollTo(0, 0); // Reset scroll position to top of actual portfolio
+    } else {
+      animationFrameId = requestAnimationFrame(animate);
+    }
+  };
 
   return (
     <>
       <AnimatePresence mode="wait">
         {isLoading && (
-          <motion.div
-            key="loader"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0, y: -40 }}
-            transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#0a0a0a] text-[#ededed]"
-          >
-            <div className="flex flex-col items-center space-y-4">
-              {/* Minimalist text/branding fade-in */}
-              <motion.h1
-                initial={{ opacity: 0, letterSpacing: "0.1em" }}
-                animate={{ opacity: 1, letterSpacing: "0.25em" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="text-xl font-bold uppercase tracking-widest font-mono"
-              >
-                Dhruv Sahoo
-              </motion.h1>
-
-              {/* A clean, formal line loader */}
-              <div className="w-24 h-[1px] bg-white/10 relative overflow-hidden">
-                <motion.div
-                  initial={{ left: "-100%" }}
-                  animate={{ left: "100%" }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 1.2,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute top-0 bottom-0 w-1/2 bg-white/60"
+          /* The high container provides the scroll length track (e.g., 300vh) */
+          <div ref={containerRef} className="relative h-[300vh] bg-black ">
+            {/* Sticky window viewport element */}
+            <div
+              ref={stickyMaskRef}
+              className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-[#ededed]"
+              style={{
+                // Base SVG clip text mask changed to WEBmaxxing with updated viewBox dimensions
+                maskImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" width="100%" height="100%"><text x="50%" y="55%" font-weight="900" font-family="sans-serif" font-size="70" text-anchor="middle" alignment-baseline="middle" fill="black">WEBmaxxing</text></svg>')`,
+                WebkitMaskImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" width="100%" height="100%"><text x="50%" y="55%" font-weight="900" font-family="sans-serif" font-size="70" text-anchor="middle" alignment-baseline="middle" fill="black">WEBmaxxing</text></svg>')`,
+                maskRepeat: "no-repeat",
+                WebkitMaskRepeat: "no-repeat",
+                maskPosition: "center center",
+                WebkitMaskPosition: "center center",
+                maskSize: "40%", // Tweak this percentage if you want it smaller or larger on load
+                WebkitMaskSize: "40%",
+              }}
+            >
+              {/* This is the background element clipped inside the text layer */}
+              {/* You can swap this <div> out with a looping background <video> or full-screen <Image> */}
+              <div className="absolute inset-0 bg-red-500 px-4 flex flex-col justify-center  select-none">
+                <Image 
+                  src="/hero-sec.png"
+                  alt="Hero Section Background"
+                  fill
+                  className="object-cover"
+                  priority
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
 
-      {/* Main Website Content Layout */}
-      <main className={isLoading ? "h-screen overflow-hidden" : ""}>
-        {children}
-      </main>
+      {/* Main Website Content Layer */}
+      <AnimatePresence>
+        {!isLoading && (
+          <motion.main
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            {children}
+          </motion.main>
+        )}
+      </AnimatePresence>
     </>
   );
 }
