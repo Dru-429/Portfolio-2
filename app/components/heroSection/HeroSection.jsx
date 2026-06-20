@@ -17,15 +17,15 @@ const HeroSection = () => {
 
   useEffect(() => {
     const updateTime = () => {
-      const now = moment().tz("Asia/Kolkata"); // Get time in IST
-      setCurrentTime(now.format("h:mm:ss A")); // Format the time
+      const now = moment().tz("Asia/Kolkata");
+      setCurrentTime(now.format("h:mm:ss A")); 
     };
 
-    updateTime(); // Initial time update
+    updateTime();
 
-    const intervalId = setInterval(updateTime, 1000); // Update every second
+    const intervalId = setInterval(updateTime, 1000); 
 
-    return () => clearInterval(intervalId); // Clean up on unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -34,7 +34,7 @@ const HeroSection = () => {
         {/* //Hero */}
         <div className="w-full flex flex-col items-center justify-center">
           {/* //Header */}
-          <div className="h-[75vh] w-[75vh] rounded-full bg-primary absolute top-14 z-0"></div>
+          <div className="lg:h-[75vh] lg:w-[75vh] h-[300px] w-[300px] rounded-full bg-primary absolute top-0 lg:top-14 z-0"></div>
           <FlipHeader />
           {/* <FlipHeader2 /> */}
           <Image
