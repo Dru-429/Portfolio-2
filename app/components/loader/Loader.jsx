@@ -105,7 +105,7 @@ export default function Loader({ children }) {
             <Spotlight/>
             <div
               ref={stickyMaskRef}
-              className="h-full w-full flex items-center justify-center overflow-hidden bg-[#ededed]"
+              className="h-full w-full flex items-center justify-center overflow-hidden bg-background"
               style={{
                 maskImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 100" width="100%" height="100%"><text x="50%" y="55%" font-weight="900" font-family="sans-serif" font-size="60" text-anchor="middle" alignment-baseline="middle" fill="black">Webmaxxing...</text></svg>')`,
                 WebkitMaskImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 100" width="100%" height="100%"><text x="50%" y="55%" font-weight="900" font-family="sans-serif" font-size="60" text-anchor="middle" alignment-baseline="middle" fill="black">Webmaxxing...</text></svg>')`,
