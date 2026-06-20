@@ -17,10 +17,9 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   // === PRIMARY METADATA ===
-  title:
-    "Web Developer | Design Engineer & Frontend Developer | AI Agents & Bots | Dhruv Sahoo",
+  title: "Design Engineer & Web Developer | Dhruv Sahoo",
   description:
-    "Build stunning websites, automate workflows with AI bots, and create custom Notion templates. Expert web developer with 1+ year experience. Free consultation available.",
+    "Freelance design engineer & web developer specializing in modern UIs, interactive animations, and responsive web design. Based in Delhi, India.",
 
   // === ICONS ===
   icons: {
@@ -32,21 +31,20 @@ export const metadata = {
   // === KEYWORDS - OPTIMIZED FOR SEO ===
   keywords: [
     // Primary Keywords
-    "frontend developer",
-    "web developer",
     "design engineer",
-    "portfolio website developer",
-    "AI automation specialist",
-    "AI workflow",
-    "AI bots",
+    "web developer",
+    "frontend developer",
+    "UI designer",
     "web developer India",
     "freelance web developer Delhi",
+    "design engineer Delhi",
+    "interactive web design",
 
     // Service Keywords
-    "portfolio website creator",
-    "web automation bot",
-    "AI workflow automation",
-    "Notion template designer",
+    "responsive web design",
+    "modern web development",
+    "UI/UX development",
+    "animation developer",
     "landing page design",
 
     // Technical Keywords
@@ -96,25 +94,17 @@ export const metadata = {
 
   // === OPEN GRAPH - SOCIAL MEDIA ===
   openGraph: {
-    title:
-      "Web Automation Builder | Portfolio Websites & AI Bots | Dhruv Sahoo",
+    title: "Design Engineer & Web Developer | Dhruv Sahoo",
     description:
-      "Build stunning portfolio websites, automate workflows with AI bots, and create custom Notion templates. Expert web developer with 1+ year experience.",
+      "Expert design engineer & web developer. Crafting modern, interactive web experiences with cutting-edge technologies and animations.",
     url: "https://www.dhruvsahoo.me",
-    siteName: "Dhruv Sahoo - Web Developer & AI Automation",
+    siteName: "Dhruv Sahoo - Design Engineer & Web Developer",
     images: [
       {
-        url: "https://www.dhruvsahoo.me/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Dhruv Sahoo - Web Automation Builder & Portfolio Developer",
-        type: "image/png",
-      },
-      {
-        url: "https://www.dhruvsahoo.me/og-image-square.png",
-        width: 800,
-        height: 800,
-        alt: "Dhruv Sahoo - Freelance Web Developer",
+        url: "https://www.dhruvsahoo.me/favicon/site.webmanifest",
+        width: 192,
+        height: 192,
+        alt: "Dhruv Sahoo - Design Engineer & Web Developer",
         type: "image/png",
       },
     ],
