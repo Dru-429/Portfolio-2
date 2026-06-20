@@ -29,20 +29,20 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="home">
+    <section id="home" className="bg-background">
       <div className=" w-100% max-h-screen relative mt-40 flex flex-col items-center selection:bg-secondary/40 selection:text-black">
         {/* //Hero */}
         <div className="w-full flex flex-col items-center justify-center">
           {/* //Header */}
-
+          <div className="h-[75vh] w-[75vh] rounded-full bg-primary absolute top-14 z-0"></div>
           <FlipHeader />
           {/* <FlipHeader2 /> */}
           <Image
-            src="/dru_model.png"
+            src="/dru_model2.png"
             alt="Dru Puppet"
             height={500}
             width={300}
-            className="lg:h-[60vh] w-auto relative -top-2 lg:-top-16"
+            className="lg:h-[65vh] w-auto relative -top-2 lg:-top-16"
           />
 
           
@@ -56,7 +56,7 @@ const HeroSection = () => {
         </div>
 
         {/* //Hero Footer */}
-        <div className="w-full px-2 border-t-[1px] mt-10 lg:-mt-16 border-foreground flex justify-between items-center relative">
+        <div className="w-full px-2 border-t-[1px] mt-10 lg:-mt-16 border-foreground flex justify-between items-center relative z-10 bg-background">
           <p className="flex gap-2\1 justify-center items-center absolute left-0 -top-10">
             <CiGlobe className="text-xl" />
             DELHI_{currentTime}

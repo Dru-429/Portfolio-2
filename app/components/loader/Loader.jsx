@@ -1,19 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import HeroSection from "../heroSection/HeroSection.jsx";
+import { Spotlight } from "@/components/ui/spotlight-new";
 
 export default function Loader({ children }) {
   const stickyMaskRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Track independent virtual scroll progress values via refs
   const progressRef = useRef(0);
   const EastonProgressRef = useRef(0);
 
-  // Animation configuration based on Olivier Larose's math
-  const initialMaskSize = 0.4; 
-  const targetMaskSize = 45;   
-  const easing = 0.08;         
+  const initialMaskSize = 0.4;
+  const targetMaskSize = 45;
+  const easing = 0.08;
 
   useEffect(() => {
     if (!isLoading) return;
@@ -59,7 +59,8 @@ export default function Loader({ children }) {
       const delta = progressRef.current - EastonProgressRef.current;
       EastonProgressRef.current += delta * easing;
 
-      const currentMaskSize = (initialMaskSize + targetMaskSize * EastonProgressRef.current) * 100;
+      const currentMaskSize =
+        (initialMaskSize + targetMaskSize * EastonProgressRef.current) * 100;
 
       // Apply structural mask sizes
       stickyMaskRef.current.style.webkitMaskSize = `${currentMaskSize}%`;
@@ -68,7 +69,7 @@ export default function Loader({ children }) {
       // Complete intro transition smoothly right before hitting absolute maximum boundaries
       if (EastonProgressRef.current >= 0.97) {
         setIsLoading(false);
-        
+
         // Clean up styles to bring back regular scrolling
         document.documentElement.style.overflow = "unset";
         document.body.style.overflow = "unset";
@@ -89,7 +90,7 @@ export default function Loader({ children }) {
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchmove", handleTouchMove);
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
-      
+
       document.documentElement.style.overflow = "unset";
       document.body.style.overflow = "unset";
       document.body.style.height = "unset";
@@ -100,14 +101,14 @@ export default function Loader({ children }) {
     <>
       <AnimatePresence mode="wait">
         {isLoading && (
-          /* Fixed full-screen context prevents document leaks or scrollbar movement */
-          <div className="fixed inset-0 z-50 h-screen w-screen overflow-hidden bg-zinc-100">
+          <div className="fixed inset-0 z-50 h-screen w-screen overflow-hidden bg-black">
+            <Spotlight/>
             <div
               ref={stickyMaskRef}
               className="h-full w-full flex items-center justify-center overflow-hidden bg-[#ededed]"
               style={{
-                maskImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" width="100%" height="100%"><text x="50%" y="55%" font-weight="900" font-family="sans-serif" font-size="70" text-anchor="middle" alignment-baseline="middle" fill="black">WEBmaxxing</text></svg>')`,
-                WebkitMaskImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" width="100%" height="100%"><text x="50%" y="55%" font-weight="900" font-family="sans-serif" font-size="70" text-anchor="middle" alignment-baseline="middle" fill="black">WEBmaxxing</text></svg>')`,
+                maskImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 100" width="100%" height="100%"><text x="50%" y="55%" font-weight="900" font-family="sans-serif" font-size="60" text-anchor="middle" alignment-baseline="middle" fill="black">Webmaxxing...</text></svg>')`,
+                WebkitMaskImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 100" width="100%" height="100%"><text x="50%" y="55%" font-weight="900" font-family="sans-serif" font-size="60" text-anchor="middle" alignment-baseline="middle" fill="black">Webmaxxing...</text></svg>')`,
                 maskRepeat: "no-repeat",
                 WebkitMaskRepeat: "no-repeat",
                 maskPosition: "center center",
@@ -117,14 +118,8 @@ export default function Loader({ children }) {
               }}
             >
               {/* Background */}
-              <div className="absolute inset-0 bg-red-500 px-4 flex flex-col justify-center select-none">
-                <Image
-                  src="/hero-sec.png"
-                  alt="Hero Section Background"
-                  fill
-                  className="object-cover"
-                  priority
-                />
+              <div className="absolut select-none">
+                <HeroSection />
               </div>
             </div>
           </div>
@@ -136,7 +131,7 @@ export default function Loader({ children }) {
         {!isLoading && (
           <motion.main
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1}}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             {children}
