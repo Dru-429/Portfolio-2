@@ -3,7 +3,6 @@ import "./globals.css";
 import { ThemeProvider } from "./components/Theme-provider";
 import Head from "next/head";
 import MetaData from "./components/MetaData";
-// import Cursor from "./components/Cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,10 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  // === PRIMARY METADATA ===
+  // === PRIMARY METADATA (Optimized Under 60 characters) ===
   title: "Design Engineer & Web Developer | Dhruv Sahoo",
-  description:
-    "Freelance design engineer & web developer specializing in modern UIs, interactive animations, and responsive web design. Based in Delhi, India.",
+  description: "Freelance design engineer & web developer crafting modern UIs, interactive animations, and sleek web experiences.",
 
   // === ICONS ===
   icons: {
@@ -28,9 +26,8 @@ export const metadata = {
     shortcut: "/favicon/favicon-32x32.png",
   },
 
-  // === KEYWORDS - OPTIMIZED FOR SEO ===
+  // === KEYWORDS ===
   keywords: [
-    // Primary Keywords
     "design engineer",
     "web developer",
     "frontend developer",
@@ -39,43 +36,20 @@ export const metadata = {
     "freelance web developer Delhi",
     "design engineer Delhi",
     "interactive web design",
-
-    // Service Keywords
     "responsive web design",
     "modern web development",
     "UI/UX development",
     "animation developer",
     "landing page design",
-
-    // Technical Keywords
     "react developer",
     "next.js developer",
-    "frontend developer",
-    "full stack developer",
     "GSAP animation developer",
-
-    // Long-tail Keywords
-    "hire portfolio website developer in Delhi",
-    "custom web bot development",
-    "AI agent development",
-    "workflow automation consultant",
-    "affordable portfolio website design India",
-
-    // Additional Keywords
-    "web design",
-    "UI development",
     "creative developer",
     "software developer",
     "developer portfolio",
-    "tech developer",
     "Delhi",
     "India",
     "freelancer",
-    "automation",
-    "AI",
-    "web scraping",
-    "outreach automation",
-    "content automation",
   ],
 
   // === ROBOTS CONFIGURATION ===
@@ -95,17 +69,15 @@ export const metadata = {
   // === OPEN GRAPH - SOCIAL MEDIA ===
   openGraph: {
     title: "Design Engineer & Web Developer | Dhruv Sahoo",
-    description:
-      "Expert design engineer & web developer. Crafting modern, interactive web experiences with cutting-edge technologies and animations.",
+    description: "Freelance design engineer & web developer crafting modern UIs, interactive animations, and sleek web experiences.",
     url: "https://www.dhruvsahoo.me",
-    siteName: "Dhruv Sahoo - Design Engineer & Web Developer",
+    siteName: "Dhruv Sahoo",
     images: [
       {
-        url: "https://www.dhruvsahoo.me/favicon/site.webmanifest",
-        width: 192,
-        height: 192,
+        url: "https://www.dhruvsahoo.me/twitter-card.png", // Pointing to a clean 1200x630 banner asset instead of the manifest file
+        width: 1200,
+        height: 630,
         alt: "Dhruv Sahoo - Design Engineer & Web Developer",
-        type: "image/png",
       },
     ],
     locale: "en_US",
@@ -115,33 +87,27 @@ export const metadata = {
   // === TWITTER CARD ===
   twitter: {
     card: "summary_large_image",
-    title:
-      "Web Automation Builder | Portfolio Websites & AI Bots | Dhruv Sahoo",
-    description:
-      "Build stunning portfolio websites, automate workflows with AI bots, and create custom Notion templates.",
+    title: "Design Engineer & Web Developer | Dhruv Sahoo", // Replaced old automation text
+    description: "Freelance design engineer & web developer crafting modern UIs, interactive animations, and sleek web experiences.", // Replaced old automation text
     creator: "@dev_druv",
-    creatorId: "1234567890",
-    images: ["https://www.dhruvsahoo.me/twitter-card.png"],
+    images: ["https://www.dhruvsahoo.me/twitter-card.png"], // Re-using the card banner
     site: "@dev_druv",
   },
 
   // === VERIFICATION & ANALYTICS ===
   verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_CODE_HERE", // Add your Google verification code
-    yandex: "YOUR_YANDEX_VERIFICATION_CODE_HERE", // Add your Yandex verification code if needed
+    google: "YOUR_GOOGLE_VERIFICATION_CODE_HERE",
+    yandex: "YOUR_YANDEX_VERIFICATION_CODE_HERE",
   },
 
-  // === ADDITIONAL METADATA ===
   category: "technology",
   creator: "Dhruv Sahoo",
   publisher: "Dhruv Sahoo",
 
-  // === ALTERNATE LINKS ===
   alternates: {
     canonical: "https://www.dhruvsahoo.me",
   },
 
-  // === SOCIAL PROFILES ===
   authors: [
     {
       name: "Dhruv Sahoo",
@@ -154,9 +120,8 @@ export const metadata = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Dhruv Sahoo - Web Developer & AI Automation Specialist",
-  description:
-    "Freelance web developer specializing in portfolio websites, AI workflow automation, and web bots. Based in Delhi, India.",
+  name: "Dhruv Sahoo - Design Engineer & Web Developer",
+  description: "Freelance design engineer & web developer specializing in modern UIs, interactive animations, and responsive web design.",
   url: "https://www.dhruvsahoo.me",
   email: "contact.dhruvsahoo@gmail.com",
   founder: {
@@ -179,10 +144,9 @@ const structuredData = {
   areaServed: ["India", "United States", "Global"],
   priceRange: "$$",
   serviceType: [
-    "Portfolio Website Development",
-    "Web Automation",
-    "AI Workflow Automation",
-    "Notion Template Design",
+    "Design Engineering",
+    "Web Development",
+    "UI/UX Development",
     "Landing Page Design",
     "Web Animation (GSAP)",
   ],
@@ -192,12 +156,8 @@ const structuredData = {
     "Tailwind CSS",
     "GSAP",
     "Framer Motion",
-    "Web Automation",
-    "AI Agents",
-    "n8n Workflows",
-    "Notion",
-    "Firebase",
-    "Appwrite",
+    "Solana ecosystem",
+    "Full-stack Web3 Development",
   ],
 };
 
@@ -225,13 +185,11 @@ export default function RootLayout({ children }) {
           href="/favicon/android-chrome-512x512.png"
         />
 
-        {/* === STRUCTURED DATA (JSON-LD) === */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
 
-        {/* === STRUCTURED DATA - ORGANIZATION === */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -241,8 +199,7 @@ export default function RootLayout({ children }) {
               name: "Dhruv Sahoo",
               url: "https://www.dhruvsahoo.me",
               logo: "https://www.dhruvsahoo.me/logo.png",
-              description:
-                "Web developer & AI automation specialist creating portfolio websites, web bots, and workflow automation solutions.",
+              description: "Design engineer & web developer creating modern, interactive web experiences.",
               sameAs: [
                 "https://www.linkedin.com/in/dhruvsahoo/",
                 "https://github.com/Dru-429",
@@ -265,14 +222,11 @@ export default function RootLayout({ children }) {
           attribute="class"
           defaultTheme="system"
           enableSystem
-          // disableTransitionOnChange
         >
           <MetaData />
-          {/* <Cursor /> */}
           {children}
         </ThemeProvider>
       </body>
     </html>
   );
 }
-//Dated 18 jun 2025
