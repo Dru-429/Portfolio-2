@@ -3,93 +3,122 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 export default function Loader({ children }) {
-  const containerRef = useRef(null);
   const stickyMaskRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Animation configuration based on Olivier Larose's math
-  const initialMaskSize = 0.5; // Starting scale of your text mask
-  const targetMaskSize = 45; // How massive it zooms (4500%) to fully reveal background
-  const easing = 0.15;
+  // Track independent virtual scroll progress values via refs
+  const progressRef = useRef(0);
+  const EastonProgressRef = useRef(0);
 
-  let easedScrollProgress = 0;
-  let animationFrameId = null;
+  // Animation configuration based on Olivier Larose's math
+  const initialMaskSize = 0.4; 
+  const targetMaskSize = 45;   
+  const easing = 0.08;         
 
   useEffect(() => {
-    // If the loader is active, bind the requestAnimationFrame scroll tracking loop
-    if (isLoading) {
-      animationFrameId = requestAnimationFrame(animate);
-    }
+    if (!isLoading) return;
+
+    // 1. Force the HTML and Body elements to have zero overflow and height constraints
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+
+    let animationFrameId = null;
+
+    // 2. Capture and strictly kill native window scroll behavior
+    const handleWheel = (e) => {
+      // Prevent the browser from moving the native scrollbar
+      if (e.cancelable) e.preventDefault();
+
+      // Adjust multiplying coefficient to change scroll sensitivity
+      progressRef.current += e.deltaY * 0.0005;
+      progressRef.current = Math.min(Math.max(progressRef.current, 0), 1);
+    }; // CRITICAL: passive must be false to allow preventDefault()
+
+    // Mobile touch tracking variables
+    let touchStart = 0;
+    const handleTouchStart = (e) => {
+      touchStart = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e) => {
+      // Prevent bounce pulling on mobile browsers
+      if (e.cancelable) e.preventDefault();
+
+      const touchEnd = e.touches[0].clientY;
+      const deltaY = touchStart - touchEnd;
+      progressRef.current += deltaY * 0.002;
+      progressRef.current = Math.min(Math.max(progressRef.current, 0), 1);
+      touchStart = touchEnd;
+    };
+
+    const animate = () => {
+      if (!stickyMaskRef.current) return;
+
+      // Linear Interpolation (Lerp) calculations loop for the spring feeling
+      const delta = progressRef.current - EastonProgressRef.current;
+      EastonProgressRef.current += delta * easing;
+
+      const currentMaskSize = (initialMaskSize + targetMaskSize * EastonProgressRef.current) * 100;
+
+      // Apply structural mask sizes
+      stickyMaskRef.current.style.webkitMaskSize = `${currentMaskSize}%`;
+      stickyMaskRef.current.style.maskSize = `${currentMaskSize}%`;
+
+      // Complete intro transition smoothly right before hitting absolute maximum boundaries
+      if (EastonProgressRef.current >= 0.97) {
+        setIsLoading(false);
+        
+        // Clean up styles to bring back regular scrolling
+        document.documentElement.style.overflow = "unset";
+        document.body.style.overflow = "unset";
+        document.body.style.height = "unset";
+      } else {
+        animationFrameId = requestAnimationFrame(animate);
+      }
+    };
+
+    // Bind layout-independent interaction listeners
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+    animationFrameId = requestAnimationFrame(animate);
+
     return () => {
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      
+      document.documentElement.style.overflow = "unset";
+      document.body.style.overflow = "unset";
+      document.body.style.height = "unset";
     };
   }, [isLoading]);
-
-  const getScrollProgress = () => {
-    if (!stickyMaskRef.current || !containerRef.current) return 0;
-
-    // Calculates how far the sticky element has traveled within its high-scroll container
-    const totalScrollableHeight =
-      containerRef.current.getBoundingClientRect().height - window.innerHeight;
-
-    // Fallback logic to finish loading if container height is miscalculated initially
-    if (totalScrollableHeight <= 0) return 0;
-
-    const scrollProgress =
-      stickyMaskRef.current.offsetTop / totalScrollableHeight;
-
-    // Linear Interpolation (Lerp) for smooth easing
-    const delta = scrollProgress - easedScrollProgress;
-    easedScrollProgress += delta * easing;
-
-    return easedScrollProgress;
-  };
-
-  const animate = () => {
-    if (!stickyMaskRef.current) return;
-
-    const progress = getScrollProgress();
-    const currentMaskSize = (initialMaskSize + targetMaskSize * progress) * 100;
-
-    // Apply the scaling dynamically to the CSS mask rules
-    stickyMaskRef.current.style.webkitMaskSize = `${currentMaskSize}%`;
-    stickyMaskRef.current.style.maskSize = `${currentMaskSize}%`;
-
-    // Once the user scrolls past 98% of the sequence, trigger the site reveal
-    if (progress >= 0.98) {
-      setIsLoading(false);
-      window.scrollTo(0, 0); // Reset scroll position to top of actual portfolio
-    } else {
-      animationFrameId = requestAnimationFrame(animate);
-    }
-  };
 
   return (
     <>
       <AnimatePresence mode="wait">
         {isLoading && (
-          /* The high container provides the scroll length track (e.g., 300vh) */
-          <div ref={containerRef} className="relative h-[300vh] bg-black ">
-            {/* Sticky window viewport element */}
+          /* Fixed full-screen context prevents document leaks or scrollbar movement */
+          <div className="fixed inset-0 z-50 h-screen w-screen overflow-hidden bg-zinc-100">
             <div
               ref={stickyMaskRef}
-              className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-[#ededed]"
+              className="h-full w-full flex items-center justify-center overflow-hidden bg-[#ededed]"
               style={{
-                // Base SVG clip text mask changed to WEBmaxxing with updated viewBox dimensions
                 maskImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" width="100%" height="100%"><text x="50%" y="55%" font-weight="900" font-family="sans-serif" font-size="70" text-anchor="middle" alignment-baseline="middle" fill="black">WEBmaxxing</text></svg>')`,
                 WebkitMaskImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" width="100%" height="100%"><text x="50%" y="55%" font-weight="900" font-family="sans-serif" font-size="70" text-anchor="middle" alignment-baseline="middle" fill="black">WEBmaxxing</text></svg>')`,
                 maskRepeat: "no-repeat",
                 WebkitMaskRepeat: "no-repeat",
                 maskPosition: "center center",
                 WebkitMaskPosition: "center center",
-                maskSize: "40%", // Tweak this percentage if you want it smaller or larger on load
-                WebkitMaskSize: "40%",
+                maskSize: `${initialMaskSize * 100}%`,
+                WebkitMaskSize: `${initialMaskSize * 100}%`,
               }}
             >
-              {/* This is the background element clipped inside the text layer */}
-              {/* You can swap this <div> out with a looping background <video> or full-screen <Image> */}
-              <div className="absolute inset-0 bg-red-500 px-4 flex flex-col justify-center  select-none">
-                <Image 
+              {/* Background */}
+              <div className="absolute inset-0 bg-red-500 px-4 flex flex-col justify-center select-none">
+                <Image
                   src="/hero-sec.png"
                   alt="Hero Section Background"
                   fill
@@ -102,13 +131,13 @@ export default function Loader({ children }) {
         )}
       </AnimatePresence>
 
-      {/* Main Website Content Layer */}
+      {/* Main Website Content Layer — Conditionally rendered so it doesn't cause page height leaks */}
       <AnimatePresence>
         {!isLoading && (
           <motion.main
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1}}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             {children}
           </motion.main>

@@ -35,7 +35,7 @@ const page = () => {
 
   return (
     <Loader>
-      <main className="bg-background text-foreground relative w-screen box-border overflow-x-hidden">
+      <main className="bg-background text-foreground relative w-full box-border overflow-x-hidden">
         <nav className="w-full flex items-center justify-center fixed top-2 lg:top-4 z-40">
           <div className="w-[98%] lg:w-full flex items-center justify-center">
             <Navbar />
