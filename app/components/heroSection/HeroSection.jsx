@@ -18,12 +18,12 @@ const HeroSection = () => {
   useEffect(() => {
     const updateTime = () => {
       const now = moment().tz("Asia/Kolkata");
-      setCurrentTime(now.format("h:mm:ss A")); 
+      setCurrentTime(now.format("h:mm:ss A"));
     };
 
     updateTime();
 
-    const intervalId = setInterval(updateTime, 1000); 
+    const intervalId = setInterval(updateTime, 1000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -34,7 +34,7 @@ const HeroSection = () => {
         {/* //Hero */}
         <div className="w-full flex flex-col items-center justify-center">
           {/* //Header */}
-          <div className="lg:h-[75vh] lg:w-[75vh] h-[300px] w-[300px] rounded-full bg-primary absolute top-0 lg:top-14 z-0"></div>
+          <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[75vh] lg:h-[75vh] top-0 md:-top-2 lg:top-14 rounded-full bg-primary absolute z-0"></div>{" "}
           <FlipHeader />
           {/* <FlipHeader2 /> */}
           <Image
@@ -44,9 +44,7 @@ const HeroSection = () => {
             width={300}
             className="lg:h-[65vh] w-auto relative -top-2 lg:-top-16"
           />
-
-          
-          <p className="lg:hidden py-10 visible text-foreground/80 w-full lg:w-[20%] text-md lg:text-sm selection:bg-secondary/80 selection:text-black text-left lg:absolute -right-2 -top-36">
+          <p className="lg:hidden py-10 visible text-foreground/80 w-full lg:w-[20%] text-md lg:text-sm selection:bg-secondary/80 selection:text-black text-left lg:absolute -right-2 -top-36 md:pb-20">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I'm a frontend developer
             obsessed with creating smooth, modern web experiences and automating
             the boring stuff. I design custom websites, build Notion templates,
@@ -56,13 +54,13 @@ const HeroSection = () => {
         </div>
 
         {/* //Hero Footer */}
-        <div className="w-full px-2 border-t-[1px] mt-10 lg:-mt-16 border-foreground flex justify-between items-center relative z-10 bg-background">
+        <div className="w-full px-2 pb-10 border-t-[1px] mt-10 lg:-mt-16 border-foreground flex justify-between items-center relative z-10 bg-background">
           <p className="flex gap-2\1 justify-center items-center absolute left-0 -top-10">
             <CiGlobe className="text-xl" />
             DELHI_{currentTime}
           </p>
 
-          <p className="hidden lg:block text-foreground/80 w-full lg:w-[20%] text-md lg:text-sm selection:bg-secondary/80 selection:text-black text-left lg:absolute -right-2 -top-36">
+          <p className="hidden lg:block text-foreground/80 w-full lg:w-[20%] text-md lg:text-sm selection:bg-secondary/80 selection:text-black text-left lg:absolute md:relative md:top-20 -right-2 lg:-top-48">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I'm a frontend developer
             obsessed with creating smooth, modern web experiences and automating
             the boring stuff. I design custom websites, build Notion templates,
