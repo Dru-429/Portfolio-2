@@ -107,7 +107,7 @@ const About = () => {
               whileHover="hover"
               initial="rest"
               animate="rest"
-              className="relative flex items-center gap-3 px-8 py-3 mt-16 rounded-full bg-secondary text-background overflow-hidden group"
+              className="relative flex items-center gap-3 px-8 py-3 mt-20 lg:mt-16 rounded-full bg-secondary text-background overflow-hidden group"
             >
               {/* Arrow Icon */}
               <motion.span
