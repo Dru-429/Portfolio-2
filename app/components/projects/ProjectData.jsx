@@ -46,7 +46,7 @@ const projectData = [
       ["Framer Motion", <SiFramer />],
       ["Prisma / Postgres", <SiPrisma />],
     ],
-    img: "/github_Wrapped.png",
+    img: "/github_wrapped.png",
   },
   {
     title: "Ochi Design",
