@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "./components/Theme-provider";
 import Head from "next/head";
 import MetaData from "./components/MetaData";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -218,6 +219,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden relative zoom-in-90`}
       >
+        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
